@@ -1,0 +1,893 @@
+/*
+Theme Name: Crésus Support 08-17
+Theme URI: https://support.cresus.ch
+Description: Site dédier au support des logiciels de la Ligne Crésus
+Version: 0.1
+Author: GFELLER Gilles
+
+font-family: 'Domine', serif;
+font-family: 'Lato', sans-serif;
+
+BLACK:        #222222
+WHITE:        #FDFDFD
+
+DARK GRAY     #333333
+MEDIUM GRAY   #
+LIGHT GRAY
+
+DARK BLUE
+MEDIUM BLUE   #005187
+LIGHT BLUE
+
+DARK YELLLOW
+MEDIUM YELLLOW
+LIGHT YELLLOW
+
+DARK GREEN
+MEDIUM GREEN
+LIGHT GREEN
+
+
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+::selection{
+    background: none repeat scroll 0 0 #222;
+    color: #fdfdfd;
+    text-shadow:none;
+}
+
+::-moz-selection{
+    background: none repeat scroll 0 0 #222;
+    color: #fdfdfd;
+    text-shadow:none;
+}
+
+::-webkit-selection{
+    background: none repeat scroll 0 0 #222;
+    color: #fdfdfd;
+    text-shadow:none;
+}
+
+/* SCROLL TOP */
+
+a.scrollup, a.scrollup:link,a.scrollup:focus, a.scrollup:visited  {
+        bottom: 10px;
+        right: 10px;
+        color: #E21F24;
+        cursor: pointer;
+        display: none;
+        font-size: 2em;
+        font-weight: normal;
+        padding: 0.2em 0.4em 0.2em 0.55em;
+        position: fixed;
+        text-align: center;
+        transition-duration: 0.1s;
+        transition-property: all;
+        z-index: 999;
+}
+a.scrollup:hover {
+        color: #f0f0f0;
+}
+
+/* BODY */
+
+body {
+    background: #fdfdfd;
+    color: #222222;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h2.section-title {
+    color: $primary-color;
+    border-bottom: 1px solid $primary-color;
+    font-size: 1.5em;
+    margin: 2em 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.button {
+    background: $primary-color;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+a.button.centred {
+    display: block;
+    width: 250px;
+    text-align: center;
+    margin: 2em auto;
+}
+
+/* HEADER */
+
+header {
+    position: relative;
+    background: $primary-color;
+    min-height: 105px;
+}
+
+a#logo {
+    width: 150px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: block;
+}
+
+#toptools {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    color: #fff;
+    font-size: .8em;
+}
+
+#burger-button{
+    display: none;
+    background-color:transparent;
+    position: absolute;
+    right:10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header #lang_sel_list ul {
+}
+
+.wpml-ls-legacy-list-horizontal {
+    padding: 0px;
+    border: none;
+    float: left;
+}
+
+.wpml-ls-statics-shortcode_actions a {
+    background: none;
+    color: #fff;
+}
+
+.wpml-ls-statics-shortcode_actions .wpml-ls-current-language > a {
+    background: none;
+    font-weight: bolder;
+    color: #fff;
+}
+
+.wpml-ls-statics-shortcode_actions .wpml-ls-current-language:hover > a, .wpml-ls-statics-shortcode_actions .wpml-ls-current-language > a:focus  {
+    background: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.wpml-ls-statics-shortcode_actions a:hover, .wpml-ls-statics-shortcode_actions a:focus {
+    background: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#website-link {
+    display: inline-block;
+    color: #fff;
+    margin-top: 6px;
+    padding: 0px 0px 2px 10px;
+    border-left: 1px solid #fff;
+    line-height: 1;
+}
+
+#website-link:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* MENU */
+
+ul#menu-main {
+    position: absolute;
+    right: 20px;
+    bottom: 0px;
+    margin: 0px;
+}
+
+ul#menu-main li {
+    list-style: none;
+    text-align: left;
+    display: inline-block;
+    position: relative;
+}
+
+ul#menu-main li a:link, ul#menu-main li a:focus, ul#menu-main li a:visited {
+    display: block;
+    color: #fff;
+    padding: .5em 1em;
+    transition-duration: .2s;
+    transition-property: all;
+}
+
+ul#menu-main li a:hover {
+    color: #005783;
+    background: #fdfdfd;
+}
+
+ul#menu-main li ul {
+    display: none;
+    position: relative;
+    margin: 0px;
+}
+
+ul#menu-main li:hover ul {
+    display: block;
+    position: absolute;
+    background: $primary-color;
+    color: #fff;
+    padding: 0px;
+}
+
+ul#menu-main li ul li {
+    display: block;
+}
+
+ul#menu-main li ul li a:link, ul#menu-main li ul li a:focus, ul#menu-main li ul li a:visited {
+    display: block;
+    width: 200px;
+    padding: .5em 1em;
+}
+
+/* FOOTER */
+
+#footer-top {
+    background: $primary-color;
+    color: #fdfdfd;
+    padding: 3em 0px;
+    font-size: .9em;
+}
+
+#footer-top .cell {
+    padding: 5px;
+}
+
+#footer-top .has-tip {
+    border-bottom: none;
+}
+
+#footer-top .separe {
+    border-right: 2px solid rgba(0, 46, 77, 0.50);
+}
+
+#footer-top a {
+    color: #fdfdfd;
+}
+
+#footer-top a:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#footer-top h2 {
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+#footer-top ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+#footer-top ul li {
+    list-style: none;
+}
+
+#footer-top a.social i {
+    font-size: 2em;
+    margin-right: 1em;
+}
+
+#footer-top a.social i:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#footer-bottom {
+    background: #002E4D;
+    color: #81A9C3;
+    font-size: .8em;
+    padding: 1em;
+}
+
+/*
+---------------------------------------------------
+    HOME - SUPPORT
+---------------------------------------------------
+*/
+
+/* SECTION HERO*/
+
+#hero {
+    padding: 2em 0px 2em 0px;
+    color: #fdfdfd;
+    text-align: center;
+    background: url(https://support.cresus.ch/wp-content/themes/support/images/icon.svg) left top #c8e1f3;
+    background-size: 800px;
+}
+
+#hero h1{
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 20px rgba(0, 81, 135, 0.5);
+}
+
+ul.sous-navigation {
+    margin: 0px;
+    padding: 0px 0px 15px 0px;
+}
+
+ul.sous-navigation li {
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    list-style: none;
+    border-right: 2px solid $primary-color;
+}
+
+ul.sous-navigation li:last-child {
+    border-right: none;
+}
+
+ul.sous-navigation li a {
+    font-weight: 700;
+    color: $primary-color;
+    text-transform: uppercase;
+    display: block;
+    padding: 0px .5em;
+
+}
+
+ul.sous-navigation li a:hover {
+    opacity: .5;
+}
+
+#hero p {
+    font-weight: 700;
+    font-size: 1.25em;
+    text-shadow: 0px 0px 20px rgba(0, 81, 135, 0.2);
+    margin: 1em 0px 2em 0px;
+}
+
+#hero .search-wrapper {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    padding: .5em 0px;
+    margin-bottom: 2em;
+}
+
+#hero table.search {
+    margin-bottom: 0px;
+}
+
+#hero table.search tbody{
+    background: none;
+    border: none;
+}
+
+#hero table.search tbody tr td input#s {
+    margin-bottom: 0px;
+    border: none;
+    height: 40px;
+}
+
+#hero table.search tbody tr td input#searchsubmit {
+    color: #fff;
+    border: none;
+    background: $primary-color;
+    width: 100%;
+    height: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: .75em;
+}
+
+#hero table.search tbody tr td input#searchsubmit:hover {
+    opacity: .5;
+}
+
+/* SECTION MANUELS*/
+
+section#manuels {
+
+}
+
+a.comptabilite {
+    color: $primary-color;
+}
+
+a.comptabilite:hover {
+    background: #c8e1f3;
+}
+
+a.salaires {
+    color: #846d39;
+}
+
+a.salaires:hover {
+    background: #fee4bb;
+}
+
+a.facturation {
+    color: #47693e;
+}
+
+a.facturation:hover {
+    background: #cfe4c1;
+}
+
+a.gestion-pe {
+    color: #5f375a;
+}
+
+a.gestion-pe:hover {
+    background: #d5b8d6;
+}
+
+a.wrap-manuel {
+    text-align: center;
+    padding: 1.25em 2em;
+    display: block;
+    border-radius: 2px;
+}
+
+a.wrap-manuel img{
+    width: 175px;
+    margin-bottom: 20px;
+}
+
+a.wrap-manuel h3 span {
+    display: block;
+    font-size: .75em;
+}
+
+a.wrap-manuel h3 {
+    font-size: 1.5em;
+    font-weight: lighter;
+    line-height: 1em;
+}
+
+/* SECTION FAQ */
+
+#faq h4 {
+    font-weight: 700;
+    font-size: 1em;
+    color: $primary-color;
+}
+
+:last-child:not(.is-active) > .accordion-title, :last-child > .accordion-content:last-child, .accordion-title, .accordion-content {
+    border: none;
+}
+
+.accordion-title {
+    font-size: 1em;
+    padding: 1.25rem 2rem 1.25rem 1rem;
+    color: #222;
+}
+
+.is-active > .accordion-title  {
+    font-weight: bolder;
+}
+
+.accordion-content {
+/*   background: #f7f7f7; */
+border-bottom: 1px solid #ddd;
+}
+
+/*
+#faq ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#faq ul li {
+    list-style: none;
+}
+
+#faq ul li a {
+    display: block;
+    padding: .5em;
+    color: #222;
+}
+
+#faq ul li a:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20)
+}
+
+#faq ul li a i {
+    margin-right: .5em;
+    color: $primary-color;
+    transition-duration: .3s;
+    transition-property: all;
+}
+
+#faq ul li a:hover i {
+    margin-left: .5em;
+}
+*/
+
+/* SECTION BULLETIN */
+
+#bulletin {
+    margin-bottom: 4em;
+    padding-top: 30px;
+}
+
+table.bulletin tbody{
+    background: none;
+    border: none;
+}
+
+table.bulletin tbody tr td input#email {
+    margin-bottom: 0px;
+    border: none;
+    height: 40px;
+    background: #fff;
+}
+
+table.bulletin tbody tr td input#inscription {
+    color: #fff;
+    border: none;
+    background: $primary-color;
+    width: 100%;
+    height: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: .75em;
+    padding: 0px;
+    margin: 0px;
+}
+
+table.bulletin tbody tr td input#inscription:hover {
+    opacity: .5;
+}
+
+#bulletin .wrapper {
+    margin-top: 2em;
+}
+
+#bulletin .wrapper .date {
+font-size: .8em;
+color: #999;
+}
+
+#bulletin .wrapper:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20)
+}
+
+#bulletin .wrapper .text {
+    padding: 1em;
+    position: relative;
+}
+
+#bulletin .wrapper .text h3 {
+    color: $primary-color ;
+    font-size: 1.5em;
+}
+
+#bulletin .wrapper .text a.button {
+    color: $primary-color ;
+    background: #fff;
+    border: 2px solid $primary-color;
+    display: block;
+    width: 50%;
+    margin: 40px auto 0px auto;
+    font-size: .75em;
+    opacity: 1;
+}
+
+#bulletin .wrapper:hover .text a.button {
+    color: #FFF ;
+    background: $primary-color;
+}
+
+#bulletin .wrapper:hover .text a.button:hover {
+    opacity: .5;
+}
+
+#bulletin a.button, #faq a.button{
+    background: $primary-color ;
+    width: 200px;
+    margin: 40px auto 0px auto;
+    font-size: .75em;
+    opacity: 1;
+}
+
+#bulletin a.button:hover, #faq a.button:hover {
+    opacity: .5;
+    background: $primary-color ;
+}
+
+/*
+---------------------------------------------------
+    ACCROCHES
+---------------------------------------------------
+*/
+
+.accroches-wrapper {
+    background: #a4cdea;
+    color: #fff;
+    position: relative;
+    padding: 2em;
+    margin: 4em 0px 0px 0px;
+    overflow: hidden;
+    height: 230px;
+}
+
+.accroches-wrapper .icon {
+    position: absolute;
+    font-size: 17em;
+    opacity: .2;
+}
+
+.accroches-wrapper .txt-wrapper {
+    padding: 0px 0px 0px 0px;
+}
+
+.accroches-wrapper .txt-wrapper .exergue {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    font-size: 2em;
+    margin-bottom: .5em;
+    text-transform: uppercase;
+}
+
+.accroches-wrapper .txt-wrapper .strong {
+    font-weight: 800;
+}
+
+.accroches-wrapper .txt-wrapper a {
+    color: #fff;
+}
+
+.accroches-wrapper .txt-wrapper a:hover {
+    text-decoration: underline;
+}
+
+.tags-wrapper ul.etiquettes, .category-wrapper ul.post-categories {
+    padding: 0px;
+    margin: 0px;
+}
+
+.tags-wrapper ul.etiquettes li, .category-wrapper ul.post-categories li {
+    margin: 0px 1em 0px 0px;
+    padding: .25em .75em;
+    display: inline-block;
+    list-style: none;
+    background: #f0f0f0;
+}
+
+.tags-wrapper ul.etiquettes li a, .category-wrapper ul.post-categories li a{
+    font-size: .75em;
+}
+
+/*
+---------------------------------------------------
+    SEARCH
+---------------------------------------------------
+*/
+
+#search {
+    background: #f0f0f0;
+    padding: 2em 0px;
+    margin: 4em 0px;
+}
+
+#search table tbody {
+    background: none;
+}
+
+#search table.search tbody tr td input#s {
+    margin-bottom: 0px;
+    border: none;
+    height: 40px;
+}
+
+#search table.search tbody tr td input#searchsubmit {
+    color: #fff;
+    border: none;
+    background: $primary-color;
+    width: 100%;
+    height: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: .75em;
+}
+
+#search table.search tbody tr td input#searchsubmit:hover {
+    opacity: .5;
+}
+
+/*
+---------------------------------------------------
+    INTERIEUR
+---------------------------------------------------
+*/
+
+/* ARIANE */
+
+section#ariane {
+    margin-top: 20px;
+}
+
+.breadcrumbs a {
+    color: $primary-color ;
+}
+
+
+#inscription {
+    background: #f0f0f0;
+    padding: 0px 0px 2em 0px;
+    margin-top: 4em;
+}
+
+section#sous-navigation a {
+    border: 2px solid rgba(0, 81, 135, 1);
+    color: rgba(0, 81, 135, 1);
+    font-weight: 800;
+    padding: 0.85em 1em;
+    text-transform: uppercase;
+    font-size: .75em;
+}
+
+section#sous-navigation a:hover {
+    border: 2px solid rgba(0, 81, 135, .3);
+    color: rgba(0, 81, 135, .4);
+}
+
+/*
+---------------------------------------------------
+    SIDEBAR
+---------------------------------------------------
+*/
+
+
+#sidebar ul.nav {
+    padding: 0px;
+    margin: 0px;
+}
+
+#sidebar ul.nav li {
+    list-style: none;
+}
+
+#sidebar ul.nav li ol li a {
+    padding: 0px ;
+}
+
+#sidebar ul.nav li a {
+    display: block;
+    padding: 1em 1.5em ;
+    margin-bottom: 10px;
+}
+
+#sidebar ul.nav li a img {
+    height: 40px;
+    margin-right: .5em;
+    transition-duration: .2s;
+    transition-property: all;
+}
+
+#sidebar ul.nav li a:hover img, #sidebar ul.nav li a.actif img {
+    padding-left: 1em;
+}
+
+#sidebar ul.nav li#cresus-generalites a.tabs {
+    background: #ddd;
+    color: #333;
+}
+
+#sidebar ul.nav li#cresus-comptabilite a.tabs {
+    background: #c8e1f3;
+    color: $primary-color;
+}
+
+#sidebar ul.nav li#cresus-salaires a.tabs {
+    background: #fee4bb;
+    color: #846d39;
+}
+
+#sidebar ul.nav li#cresus-facturation a.tabs {
+    background: #cfe4c1;
+    color: #47693e;
+}
+
+#sidebar ul.nav li#cresus-gestion-pe a.tabs {
+    background: #d5b8d6;
+    color: #5f375a;
+}
+
+#sidebar .tabs {
+    border: none;
+}
+
+.doc-menurelated {
+    max-height: 400px;
+    overflow: scroll;
+}
+
+/*
+---------------------------------------------------
+    MANUELS
+---------------------------------------------------
+*/
+
+span.action, p.action {
+    font-style: italic;
+}
+
+span.clavier-corps, p.clavier-corps {
+    border: 1px solid #666;
+    padding: 2px;
+}
+
+span.emphase1 {
+    font-weight: bolder;
+}
+
+p.note {
+    background: #ddd;
+    padding: 2em;
+}
+
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+/* ----------------------- Header ----------------------- */
+    /* Centre le logo sur mobile */
+    a#logo {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    /* On désactive l'affichage des langues */
+    #toptools {
+        display:none;
+    }
+    /* On désactive l'affichage du menu horizontal sur mobile */
+    ul#menu-main, ul#menu-main-de {
+        display:none;
+    }
+    /* On affiche le burger-button sur mobile */
+    #burger-button {
+        display:block;
+    }
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+    .accroches-wrapper .icon {
+        opacity: .5;
+    }
+
+    .accroches-wrapper .txt-wrapper {
+        padding: 0px 0px 0px 40%;
+    }
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+
+}

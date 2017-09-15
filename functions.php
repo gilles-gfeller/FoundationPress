@@ -45,11 +45,21 @@ require_once( 'library/theme-support.php' );
 /** Add Nav Options to Customer */
 require_once( 'library/custom-nav.php' );
 
+
 /** Change WP's sticky post class */
 require_once( 'library/sticky-posts.php' );
 
 /** Configure responsive image sizes */
 require_once( 'library/responsive-images.php' );
+
+/** Add Custom filter */
+require_once( 'library/custom-filter.php' );
+
+/** Add Custom action */
+require_once( 'library/custom-action.php' );
+
+/** Add Custom functions */
+require_once( 'library/custom-function.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );

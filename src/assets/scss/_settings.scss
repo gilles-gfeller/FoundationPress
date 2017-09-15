@@ -71,7 +71,7 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #4C9BDC,
+  primary: #005187,
   secondary: #767676,
   success: #3adb76,
   warning: #ffae00,
@@ -84,7 +84,7 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$body-font-family: -apple-system, BlinkMacSystemFont, "Lato", sans-serif, "Domine", serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;

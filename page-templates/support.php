@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 
 Template Name: Support
@@ -15,30 +15,28 @@ other "pages" on your WordPress site will use a different template.
  get_header(); ?>
 
  <?php get_template_part( 'template-parts/featured-image' ); ?>
-        <?php if(have_posts()) : ?>
-        <?php while(have_posts()) : the_post(); ?>
 
         <section id="hero">
             <div class="grid-container">
-              <div class="grid-x grid-padding-x align-center">
+                <div class="grid-x grid-padding-x align-center">
+                <?php if(have_posts()) : ?>
+                <?php while(have_posts()) : the_post(); ?>
                 <div class="medium-8 cell">
-                        <h1><?php the_title(); ?></h1>
-                        <ul class="sous-navigation">
-                            <li><a href="#manuels"><?php _e( 'manuals', 'support' ); ?></a></li>
-                            <li><a href="#faq"><?php _e( 'faq', 'support' ); ?></a></li>
-                            <li><a href="#inscription"><?php _e( 'newsletter', 'support' ); ?></a></li>
-                        </ul>
-            <?php the_content(); ?>
-            <?php endwhile; ?>
-            <?php endif; ?>
+                    <h1><?php the_title(); ?></h1>
+                    <ul class="sous-navigation">
+                        <li><a href="#manuels"><?php _e( 'manuals', 'support' ); ?></a></li>
+                        <li><a href="#faq"><?php _e( 'faq', 'support' ); ?></a></li>
+                        <li><a href="#inscription"><?php _e( 'newsletter', 'support' ); ?></a></li>
+                    </ul>
+                    <?php the_content(); ?>
                 </div>
+                <?php endwhile; ?>
+                <?php endif; ?>
+                <?php wp_reset_query(); ?>
               </div>
               <div class="grid-x grid-padding-x">
                 <div class="medium-12 cell">
-
-                  <?php get_search_form(); ?>
-
-                  <a href="#" class="adveced-search"><i class="fa fa-angle-down" aria-hidden="true"></i> <?php _e( 'advanced search', 'support' ); ?></a>
+                    <?php get_search_form(); ?>
                 </div>
               </div>
             </div>
@@ -86,77 +84,56 @@ other "pages" on your WordPress site will use a different template.
                 </div>
               </div>
               <div class="grid-x grid-padding-x">
-                <div class="large-3 medium-6 cell">
-                  <h4 class=""><?php _e( 'topics', 'support' ); ?></h4>
-                  <ul>
-
-                    <?php
-                        query_posts( array(
-                            'category_name'  => 'du-moment-gauche',
-                            'posts_per_page' => 1,
-                            'orderby' => 'date',
-                            'order' => 'DESC', )
-                        );
-                    ?>
-                    <?php if(have_posts()) : ?>
-                    <?php while(have_posts()) : the_post(); ?>
-                        <li>
-                          <a href="<?php the_permalink(); ?>">
-                            <i class="fa fa-caret-right" aria-hidden="true"></i>
-                            <?php the_title(); ?>
-                          </a>
-                        </li>
-                    <?php endwhile; ?>
-                    <?php endif; ?>
-                    <?php wp_reset_query(); ?>
-                  </ul>
-                </div>
-                <div class="large-3 medium-6 cell">
-                  <h4 class="">&nbsp;</h4>
-                  <ul>
+                <div class="large-6 medium-6 cell">
                     <?php  query_posts( array(
-                        'category_name'  => 'du-moment-droite',
-                        'posts_per_page' => 1,
+                        'category_name'  => 'du-moment',
+                        'posts_per_page' => 4,
                         'orderby' => 'date',
                         'order' => 'DESC', )
-                        );
+                    ) ;
                     ?>
-                    <?php if(have_posts()) : ?>
-                    <?php while(have_posts()) : the_post(); ?>
-                        <li>
-                          <a href="<?php the_permalink(); ?>">
-                            <i class="fa fa-caret-right" aria-hidden="true"></i>
-                            <?php the_title(); ?>
-                          </a>
-                        </li>
+                    <h4 class=""><!-- <i class="fa fa-clock-o" aria-hidden="true"></i> --> <?php _e( 'topics', 'support' ); ?></h4>
+                    <ul class="accordion" data-accordion data-allow-all-closed="true">
+                		<?php if(have_posts()) : ?>
+                		<?php while(have_posts()) : the_post(); ?>
+                    <li class="accordion-item" data-accordion-item>
+                      <!-- Accordion tab title -->
+                      <a href="#" class="accordion-title"><?php the_title(); ?></a>
+                      <div class="accordion-content" data-tab-content>
+                        <?php
+                            if(has_excerpt()) the_excerpt();
+                            else the_content();
+                        ?>
+                      </div>
+                    </li>
                     <?php endwhile; ?>
                     <?php endif; ?>
                     <?php wp_reset_query(); ?>
-                  </ul>
+                    </ul>
                 </div>
                 <div class="large-6 medium-12 cell">
-                  <h4 class=""><?php _e( 'very faq', 'support' ); ?></h4>
-                  <ul>
                     <?php  query_posts( array(
                         'category_name'  => 'tres-frequentes',
-                        'posts_per_page' => 1,
+                        'posts_per_page' => 4,
                         'orderby' => 'date',
-                        'order' => 'DESC')
-                        );
+                        'order' => 'DESC', )
+                    ) ;
                     ?>
-                    <?php if(have_posts()) : ?>
-                    <?php while(have_posts()) : the_post(); ?>
-                        <li>
-                          <a href="<?php the_permalink(); ?>">
-                            <i class="fa fa-caret-right" aria-hidden="true"></i>
-                            <?php the_title(); ?>
-                          </a>
-                        </li>
+                    <h4 class=""><!-- <i class="fa fa-comments-o" aria-hidden="true" ></i> --> <?php _e( 'very faq', 'support' ); ?></h4>
+                    <ul class="accordion" data-accordion data-allow-all-closed="true">
+            		<?php if(have_posts()) : ?>
+            		<?php while(have_posts()) : the_post(); ?>
+                    <li class="accordion-item" data-accordion-item>
+                      <!-- Accordion tab title -->
+                      <a href="#" class="accordion-title"><?php the_title(); ?></a>
+                      <div class="accordion-content" data-tab-content>
+                        <?php the_content(); ?>
+                      </div>
+                    </li>
                     <?php endwhile; ?>
                     <?php endif; ?>
                     <?php wp_reset_query(); ?>
-
-                  </ul>
+                    </ul>
                 </div>
               </div>
               <div class="grid-x grid-padding-x">
@@ -201,41 +178,7 @@ other "pages" on your WordPress site will use a different template.
               </div>
             </div>
         </section>
-        <div class="reveal large" id="modalBulletin" data-reveal>
-            <h1><?php _e( 'privacy policy', 'support' ); ?></h1>
-            <p class="lead"><?php _e( 'privacy policy_subtitle', 'support' ); ?></p>
-            <p><?php _e( 'privacy policy_text', 'support' ); ?></p>
-            <button class="close-button" data-close aria-label="Close modal" type="button">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <section id="inscription">
-            <div class="grid-container">
-              <div class="grid-x grid-padding-x">
-                <div class="medium-12 cell">
-                  <h2 class="section-title text-center"><?php _e( 'newsletter', 'support' ); ?></h2>
-                </div>
-              </div>
-              <div class="grid-x grid-padding-x">
-                <div class="medium-12 cell text-center">
-                  <p><?php _e( 'To be informed, subscribe to the Cresus Newsletter.', 'support' ); ?><br /><?php _e( 'We will then send you a dozen emails a year.', 'support' ); ?></p>
-                </div>
-              </div>
-              <div class="grid-x grid-padding-x align-center">
-                <div class="medium-12 cell">
-                  <form method="get" id="" action="">
-                    <table class="bulletin">
-                      <tr>
-                        <td class="left"><input placeholder="<?php _e( 'please, enter your email', 'support' ); ?>" type="text" value="" name="email" id="email" /></td>
-                        <td class="right"><input type="submit" id="inscription" value="<?php _e( 'subscription', 'support' ); ?>" /></td>
-                      </tr>
-                    </table>
-                  </form>
-                  <a href="#" data-open="modalBulletin" class="adveced-search"><i class="fa fa-angle-down" aria-hidden="true"></i> <?php _e( 'privacy policy', 'support' ); ?></a>
-                </div>
-              </div>
-            </div>
-        </section>
+        <?php get_template_part( 'template-parts/subscription' ); ?>
         <?php  query_posts( array(
                 'category_name'  => 'Blog',
                 'orderby' => 'date',
@@ -245,26 +188,29 @@ other "pages" on your WordPress site will use a different template.
         ?>
         <section id="bulletin">
             <div class="grid-container">
-              <div class="grid-x grid-margin-x align-center">
+              <div class="grid-x grid-padding-x align-center">
                 <?php if(have_posts()) : ?>
                 <?php while(have_posts()) : the_post(); ?>
-                  <div class="card cell large-3 medium-6">
+                   <div class="card cell large-3 medium-6 small-12">
+                      <div class="card-image">
                         <?php
                         if ( has_post_thumbnail() ) {
                             the_post_thumbnail();
                         } else { ?>
                         <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/img-default.svg" alt="<?php the_title(); ?>" />
                         <?php } ?>
+                      </div>
                       <div class="card-section">
                         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                         <p class="entry-meta date">
                             <?php the_time("d F Y"); ?>
                         </p>
+                        <?php the_field("sous-titre"); ?>
                       </div>
-                      <div class="card-button text-center">
+                      <div class="card-divider text-center">
                         <a href="<?php the_permalink(); ?>" class="button bouton-bottom"><?php _e( 'read more...', 'support' ); ?></a>
                       </div>
-                  </div>
+                    </div>
                 <?php endwhile; ?>
                 <?php endif; ?>
                 <?php wp_reset_query(); ?>
