@@ -30,6 +30,7 @@
     <?php do_action( 'foundationpress_after_body' ); ?>
     <?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
     <?php do_action( 'foundationpress_layout_start' ); ?>
+    <a href="#" class="scrollup" style="display: block;"><i class="fa fa-chevron-circle-up"></i></a>
     <header class="site-header" role="banner">
 		  <a href="<?php bloginfo('url'); ?>" id="logo" title="<?php bloginfo('name'); ?>">
 			<img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/logo-cresus-support.svg" alt="<?php bloginfo('name'); ?>">
@@ -47,7 +48,7 @@
                 'items_wrap' => '<ul id="menu-main" class="menu">%3$s</ul>'     // force le menu a avoir l'id menu-main, peu importe la langue
             ));
           ?>
-          <button id="burger-button" type="button" class="button menu-icon" data-toggle="offCanvasRight"></button>
+          <button id="burger-button" type="button" class="button menu-icon off-canvas" data-toggle="offCanvasRight"></button>
 	</header>
 	<section class="container">
 		<?php do_action( 'foundationpress_after_header' );

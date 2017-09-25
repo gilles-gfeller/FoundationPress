@@ -49,25 +49,25 @@ other "pages" on your WordPress site will use a different template.
                 </div>
               </div>
               <div class="grid-x grid-padding-x">
-                <div class="medium-6 large-3 cell">
+                <div class="small-6 medium-6 large-3 cell">
                   <a href="/manuels/cresus-comptabilite/" class="wrap-manuel comptabilite">
                     <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/icon-cresus-comptabilite.svg" alt="Crésus Comptabilité">
                     <h3><span><?php _e( 'cresus', 'support' ); ?></span><?php _e( 'accounting', 'support' ); ?></h3>
                   </a>
                 </div>
-                <div class="medium-6 large-3 cell">
+                <div class="small-6 medium-6 large-3 cell">
                   <a href="/manuels/cresus-salaires/" class="wrap-manuel salaires">
                     <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/icon-cresus-salaires.svg" alt="Crésus Salaires">
                     <h3><span><?php _e( 'cresus', 'support' ); ?></span><?php _e( 'salaries', 'support' ); ?></h3>
                   </a>
                 </div>
-                <div class="medium-6 large-3 cell">
+                <div class="small-6 medium-6 large-3 cell">
                   <a href="/manuels/cresus-facturation/" class="wrap-manuel facturation">
                     <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/icon-cresus-facturation.svg" alt="Crésus Facturation">
                     <h3><span><?php _e( 'cresus', 'support' ); ?></span><?php _e( 'invoicing', 'support' ); ?></h3>
                   </a>
                 </div>
-                <div class="medium-6 large-3 cell">
+                <div class="small-6 medium-6 large-3 cell">
                   <a href="/manuels/cresus-gestion-pe/" class="wrap-manuel gestion-pe">
                     <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/icon-cresus-gestion-pe.svg" alt="Crésus Gestion PE">
                     <h3><span><?php _e( 'cresus', 'support' ); ?></span><?php _e( 'small-business', 'support' ); ?></h3>
@@ -78,7 +78,7 @@ other "pages" on your WordPress site will use a different template.
         </section>
         <section id="faq">
             <div class="grid-container">
-              <div class="grid-x grid-padding-x">
+              <div class="grid-x">
                 <div class="medium-12 cell">
                   <h2 class="section-title text-center"><?php _e( 'faq', 'support' ); ?></h2>
                 </div>
@@ -136,7 +136,7 @@ other "pages" on your WordPress site will use a different template.
                     </ul>
                 </div>
               </div>
-              <div class="grid-x grid-padding-x">
+              <div class="grid-x">
                 <div class="large-12 cell text-center">
                   <a href="/faq" class="button"><?php _e( 'View all FAQ', 'support' ); ?></a>
                 </div>
@@ -188,7 +188,7 @@ other "pages" on your WordPress site will use a different template.
         ?>
         <section id="bulletin">
             <div class="grid-container">
-              <div class="grid-x grid-padding-x align-center">
+              <div class="grid-x grid-margin-x">
                 <?php if(have_posts()) : ?>
                 <?php while(have_posts()) : the_post(); ?>
                    <div class="card cell large-3 medium-6 small-12">

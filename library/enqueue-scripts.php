@@ -15,6 +15,9 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 	// Enqueue the main Stylesheet.
 	wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/dist/assets/css/app.css', array(), '2.10.3', 'all' );
 
+    // Enqueue the main Stylesheet.
+	wp_enqueue_style( 'stylesheet', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800', array(), null, 'all' );
+
 	// Deregister the jquery version bundled with WordPress.
 	wp_deregister_script( 'jquery' );
 
@@ -26,7 +29,6 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 
 	// Enqueue FontAwesome from CDN. Uncomment the line below if you don't need FontAwesome.
 	//wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/5016a31c8c.js', array(), '4.7.0', true );
-
 
 	// Add the comment-reply library on pages where it is necessary
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

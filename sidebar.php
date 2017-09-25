@@ -74,7 +74,7 @@
     </ul>
 
 
-       <?php } if (is_page( 'handbuch' ) || '4384' == $post->post_parent || (isCatActive($categories,'manuels') && !isset($_GET['s'])) ) { ?>
+       <?php } elseif (is_page( 'handbuch' ) || '4384' == $post->post_parent || (isCatActive($categories,'manuels') && !isset($_GET['s'])) ) { ?>
     <ul class="nav sticky" data-sticky data-top-anchor="285" data-btm-anchor="search:top" style="width:100%">
       <li id="cresus-comptabilite">
         <a href="<?php bloginfo('url'); ?>/handbuch/cresus-finanzbuchhaltung/" class="<?php if(isCatActive($categories,"cresus-lohnbuchhaltung") || isPageActive("cresus-lohnbuchhaltung")) echo "actif"; ?> tabs" >

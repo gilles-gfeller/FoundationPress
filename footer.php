@@ -63,16 +63,41 @@
                             </div>
                         </div>
                     </div>
+                </section>
+                <section id="footer-bottom">
+                    Copyright &copy; <?php echo current_time(Y); ?>
+    		    </section>
 				<?php do_action( 'foundationpress_after_footer' ); ?>
 			</footer>
 		</div>
 
 		<?php do_action( 'foundationpress_layout_end' ); ?>
     </div>  <!-- div du off-canvas pour le menu mobile -->
+    <!-- SCROLL TOP-->
+	<script type="text/javascript">
+    	$(window).scroll(function(){
+    	    if ($(this).scrollTop() > 100) {
+    			$('.scrollup').fadeIn(500);
+    		} else {
+    			$('.scrollup').fadeOut(500);
+    		}
+    	});
+    	$(".boutonMenu").click(function(){
+            $(".menuMobile").slideToggle(500);
+            return false;
+        });
+    	$('.scrollup').click(function(){
+    		$("html, body").animate({ scrollTop: 0 }, 500);
+    		return false;
+    	});
+	</script>
+	<!--// SCROLL TOP-->
     <?php wp_footer(); ?>
     <?php do_action( 'foundationpress_before_closing_body' ); ?>
-    <script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
-//]]></script>
+    <?php if($_SERVER['SERVER_NAME'] == "localhost") : ?>
+        <script id="__bs_script__">//<![CDATA[
+        document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
+        //]]></script>
+    <?php endif; ?>
     </body>
 </html>
