@@ -264,7 +264,6 @@
 
 
                   <div class="accroches-wrapper">
-                    <br />
                     <div class="icon" style="transform: rotate(-0deg);top: -90px; left: -50px;">
                       <i class="fa fa-life-ring" aria-hidden="true"></i>
                     </div>

@@ -144,39 +144,38 @@ other "pages" on your WordPress site will use a different template.
             </div>
         </section>
         <section id="accroches">
-            <div class="grid-container">
-              <div class="grid-x grid-padding-x">
-                <div class="large-6 medium-6 cell">
-                  <div class="accroches-wrapper">
-                    <div class="icon" style="transform: rotate(-30deg);top: -90px; left: -60px;">
-                      <i class="fa fa-smile-o" aria-hidden="true"></i>
-                    </div>
-                    <div class="text-center txt-wrapper">
-                      <p>Assistance téléphonique (Hotline)</p>
-                      <div class="exergue">
-                      <?php _e( 'administration phone number', 'support' ); ?>
-                      </div>
-                      <p class="strong">9:00 – 12:00<br>14:00 - 16:30</p>
-                      <a href="https://www.epsitec.ch/support/tarifs/" target="_blank"><i class="fa fa-angle-down" aria-hidden="true"></i> voir les tarifs</a>
-                    </div>
-                  </div>
+          <div class="row">
+            <div class="medium-6 columns">
+              <div class="accroches-wrapper">
+                <div class="icon" style="transform: rotate(-30deg);top: -90px; left: -60px;">
+                  <i class="fa fa-smile-o" aria-hidden="true"></i>
                 </div>
-                <div class="large-6 medium-6 cell">
-                  <div class="accroches-wrapper">
-                    <div class="icon" style="transform: rotate(-45deg);top: -90px; left: -60px;">
-                      <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                    </div>
-                    <div class="text-center txt-wrapper">
-                      <p>Cours logiciels et connaissances métier</p>
-                      <div class="exergue">
-                        Les Formations
-                      </div>
-                      <a href="https://www.cresus.ch/support/class/dates" target="_blank" class="strong">voir toutes les formation</a>
-                    </div>
+                <div class="text-center txt-wrapper">
+                  <p><?php _e( 'hotline', 'support' ); ?></p>
+                  <div class="exergue">
+                    <?php _e( 'hotline phone number', 'support' ); ?>
                   </div>
+                  <p class="strong">9:00 – 12:00 et 14:00 – 16:30</p>
+                  <a href="https://www.epsitec.ch/support/tarifs/" target="_blank"><i class="fa fa-angle-down" aria-hidden="true"></i> <?php _e( 'hotline price', 'support' ); ?></a>
                 </div>
               </div>
             </div>
+            <div class="medium-6 columns">
+              <div class="accroches-wrapper">
+                <div class="icon" style="transform: rotate(-45deg);top: -90px; left: -60px;">
+                  <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                </div>
+                <div class="text-center txt-wrapper">
+                  <br />
+                  <p><?php _e( 'software classes', 'support' ); ?></p>
+                  <div class="exergue">
+                    <?php _e( 'the formations', 'support' ); ?>
+                  </div>
+                  <a href="https://www.cresus.ch/support/class/dates" target="_blank" class="strong"> <?php _e( 'all the formations', 'support' ); ?></a>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
         <?php get_template_part( 'template-parts/subscription' ); ?>
         <?php  query_posts( array(
@@ -208,7 +207,7 @@ other "pages" on your WordPress site will use a different template.
                         <?php the_field("sous-titre"); ?>
                       </div>
                       <div class="card-divider text-center">
-                        <a href="<?php the_permalink(); ?>" class="button bouton-bottom"><?php _e( 'read more...', 'support' ); ?></a>
+                        <a href="<?php the_permalink(); ?>" class="button small bouton-bottom"><?php _e( 'read more...', 'support' ); ?></a>
                       </div>
                     </div>
                 <?php endwhile; ?>
