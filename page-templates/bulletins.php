@@ -141,7 +141,7 @@ Template Name: Bulletins
 
     <section id="accroches">
         <div class="grid-container">
-            <div class="grid-x grid-padding-x align-center">
+            <div class="grid-x grid-margin-x align-center">
                 <div class="medium-6 cell">
                     <div class="accroches-wrapper">
                         <div class="icon" style="transform: rotate(-30deg);top: -90px; left: -60px;">

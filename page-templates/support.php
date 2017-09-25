@@ -43,12 +43,12 @@ other "pages" on your WordPress site will use a different template.
         </section>
         <section id="manuels">
             <div class="grid-container">
-              <div class="grid-x grid-padding-x align-center">
+              <div class="grid-x align-center">
                 <div class="medium-12 cell">
                   <h2 class="section-title text-center"><?php _e( 'manuals', 'support' ); ?></h2>
                 </div>
               </div>
-              <div class="grid-x grid-padding-x">
+              <div class="grid-x">
                 <div class="small-6 medium-6 large-3 cell">
                   <a href="/manuels/cresus-comptabilite/" class="wrap-manuel comptabilite">
                     <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/icon-cresus-comptabilite.svg" alt="Crésus Comptabilité">
@@ -83,7 +83,7 @@ other "pages" on your WordPress site will use a different template.
                   <h2 class="section-title text-center"><?php _e( 'faq', 'support' ); ?></h2>
                 </div>
               </div>
-              <div class="grid-x grid-padding-x">
+              <div class="grid-x">
                 <div class="large-6 medium-6 cell">
                     <?php  query_posts( array(
                         'category_name'  => 'du-moment',
@@ -216,7 +216,7 @@ other "pages" on your WordPress site will use a different template.
               </div>
               <div class="grid-x">
                 <div class="small-12 cell text-center">
-                  <a href="/bulletins" class="button"><?php _e( 'show all newsletters', 'support' ); ?></a>
+                  <a href="/bulletins" class="button small"><?php _e( 'show all newsletters', 'support' ); ?></a>
                 </div>
               </div>
             </div>
