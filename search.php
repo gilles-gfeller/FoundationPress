@@ -44,7 +44,7 @@
                       echo '<h5>';
                       _e( 'tags', 'support' );
                       echo '</h5>';
-                      echo get_the_tag_list('<ul class="etiquettes"><li data-tooltip aria-haspopup="true" class="" data-disable-hover="false" tabindex="1" title="Afficher tous les articles qui possèdent la même étiquette">','</li><li data-tooltip aria-haspopup="true" class="" data-disable-hover="false" tabindex="1" title="Afficher tous les articles qui possèdent la même étiquette">','</li></ul>');
+                      echo get_the_tag_list('<ul class="etiquettes"><li data-tooltip aria-haspopup="true" data-trigger-class="" data-disable-hover="false" tabindex="1" title="Afficher tous les articles qui possèdent la même étiquette">','</li><li data-tooltip aria-haspopup="true" class="" data-disable-hover="false" tabindex="1" title="Afficher tous les articles qui possèdent la même étiquette">','</li></ul>');
                       echo '</div>';
                       }?>
                       <br />

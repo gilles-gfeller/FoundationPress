@@ -51,9 +51,9 @@ Template Name: Bulletins
                             <tbody style="border: none">
                               <tr>
                                 <!-- TO TRANSLATE title="<?php _e( 'previous', 'support' ); ?>" / title="<?php _e( 'next', 'support' ); ?>"-->
-                                <td style="width: 5%; font-size: 2em;" class="text-left"><?php previous_post_link( '%link', '<i class="fa fa-angle-left" style="border: none" data-tooltip aria-hidden="true" aria-haspopup="true" data-disable-hover="false" tabindex="1" title="previous"></i>', TRUE ); ?></td>
+                                <td style="width: 5%; font-size: 2em;" class="text-left"><?php previous_post_link( '%link', '<i class="fa fa-angle-left" data-trigger-class="" data-tooltip aria-hidden="true" aria-haspopup="true" data-disable-hover="false" tabindex="1" title="previous"></i>', TRUE ); ?></td>
                                 <td style="width: 90%" class="text-center">Bulletin N°<?php the_field('numero'); ?> - <?php the_date(); ?></td>
-                                <td style="width: 5%; font-size: 2em;" class="text-right"><?php next_post_link( '%link', '<i class="fa fa-angle-right" style="border: none" data-tooltip aria-hidden="true" aria-haspopup="true" data-disable-hover="false" tabindex="1" title="next"></i>', TRUE ); ?></td>
+                                <td style="width: 5%; font-size: 2em;" class="text-right"><?php next_post_link( '%link', '<i class="fa fa-angle-right" data-trigger-class="" data-tooltip aria-hidden="true" aria-haspopup="true" data-disable-hover="false" tabindex="1" title="next"></i>', TRUE ); ?></td>
                               </tr>
                             </tbody>
                           </table>

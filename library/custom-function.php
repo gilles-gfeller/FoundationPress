@@ -20,7 +20,7 @@ function tooltips_category_class($thelist){
 
   $output = '<ul class="post-categories etiquettes">';
   foreach ( $categories as $category ) {
-    $output .= '<li class="category-' . $category->slug . '"  data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Afficher tous les articles qui possèdent la même catégorie"><a href="' . esc_url(get_category_link($category->term_id)) . '">' . $category->name . '</a></li>';
+    $output .= '<li class="category-' . $category->slug . '"  data-tooltip aria-haspopup="true" data-trigger-class="" data-disable-hover="false" tabindex="1" title="Afficher tous les articles qui possèdent la même catégorie"><a href="' . esc_url(get_category_link($category->term_id)) . '">' . $category->name . '</a></li>';
   }
   $output .= '</ul>';
 
