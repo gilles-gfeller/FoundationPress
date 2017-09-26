@@ -277,10 +277,9 @@
             </div>
         </div>
     </section>
-
     <section id="search">
         <div class="grid-container">
-            <div class="grid-x grid-padding-x">
+            <div class="grid-x">
                 <div class="small-12 text-center cell">
                   <h2><?php _e( 'search', 'support' ); ?></h2>
                   <?php get_search_form(); ?>

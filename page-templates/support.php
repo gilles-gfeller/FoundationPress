@@ -43,12 +43,12 @@ other "pages" on your WordPress site will use a different template.
         </section>
         <section id="manuels">
             <div class="grid-container">
-              <div class="grid-x align-center">
+              <div class="grid-x grid-padding-x align-center">
                 <div class="medium-12 cell">
                   <h2 class="section-title text-center"><?php _e( 'manuals', 'support' ); ?></h2>
                 </div>
               </div>
-              <div class="grid-x">
+              <div class="grid-x grid-padding-x">
                 <div class="small-6 medium-6 large-3 cell">
                   <a href="/manuels/cresus-comptabilite/" class="wrap-manuel comptabilite">
                     <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/icon-cresus-comptabilite.svg" alt="Crésus Comptabilité">
@@ -78,13 +78,13 @@ other "pages" on your WordPress site will use a different template.
         </section>
         <section id="faq">
             <div class="grid-container">
-              <div class="grid-x">
+              <div class="grid-x grid-padding-x">
                 <div class="medium-12 cell">
                   <h2 class="section-title text-center"><?php _e( 'faq', 'support' ); ?></h2>
                 </div>
               </div>
-              <div class="grid-x">
-                <div class="large-6 medium-6 cell">
+              <div class="grid-x grid-padding-x">
+                <div class="large-6 cell">
                     <?php  query_posts( array(
                         'category_name'  => 'du-moment',
                         'posts_per_page' => 4,
@@ -111,7 +111,7 @@ other "pages" on your WordPress site will use a different template.
                     <?php wp_reset_query(); ?>
                     </ul>
                 </div>
-                <div class="large-6 medium-12 cell">
+                <div class="large-6 cell">
                     <?php  query_posts( array(
                         'category_name'  => 'tres-frequentes',
                         'posts_per_page' => 4,
@@ -136,7 +136,7 @@ other "pages" on your WordPress site will use a different template.
                     </ul>
                 </div>
               </div>
-              <div class="grid-x">
+              <div class="grid-x grid-padding-x">
                 <div class="large-12 cell text-center">
                   <a href="/faq" class="button"><?php _e( 'View all FAQ', 'support' ); ?></a>
                 </div>
@@ -144,38 +144,39 @@ other "pages" on your WordPress site will use a different template.
             </div>
         </section>
         <section id="accroches">
-          <div class="row">
-            <div class="medium-6 columns">
-              <div class="accroches-wrapper">
-                <div class="icon" style="transform: rotate(-30deg);top: -90px; left: -60px;">
-                  <i class="fa fa-smile-o" aria-hidden="true"></i>
-                </div>
-                <div class="text-center txt-wrapper">
-                  <p><?php _e( 'hotline', 'support' ); ?></p>
-                  <div class="exergue">
-                    <?php _e( 'hotline phone number', 'support' ); ?>
+            <div class="grid-container">
+              <div class="grid-x grid-padding-x">
+                <div class="medium-6 cell">
+                  <div class="accroches-wrapper">
+                    <div class="icon" style="transform: rotate(-30deg);top: -90px; left: -60px;">
+                      <i class="fa fa-smile-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="text-center txt-wrapper">
+                      <p><?php _e( 'hotline', 'support' ); ?></p>
+                      <div class="exergue">
+                        <?php _e( 'hotline phone number', 'support' ); ?>
+                      </div>
+                      <p class="strong">9:00 – 12:00 et 14:00 – 16:30</p>
+                      <a href="https://www.epsitec.ch/support/tarifs/" target="_blank"><i class="fa fa-angle-down" aria-hidden="true"></i> <?php _e( 'hotline price', 'support' ); ?></a>
+                    </div>
                   </div>
-                  <p class="strong">9:00 – 12:00 et 14:00 – 16:30</p>
-                  <a href="https://www.epsitec.ch/support/tarifs/" target="_blank"><i class="fa fa-angle-down" aria-hidden="true"></i> <?php _e( 'hotline price', 'support' ); ?></a>
+                </div>
+                <div class="medium-6 cell">
+                  <div class="accroches-wrapper">
+                    <div class="icon" style="transform: rotate(-45deg);top: -90px; left: -60px;">
+                      <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                    </div>
+                    <div class="text-center txt-wrapper">
+                      <p><?php _e( 'software classes', 'support' ); ?></p>
+                      <div class="exergue">
+                        <?php _e( 'the formations', 'support' ); ?>
+                      </div>
+                      <a href="https://www.cresus.ch/support/class/dates" target="_blank" class="strong"> <?php _e( 'all the formations', 'support' ); ?></a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="medium-6 columns">
-              <div class="accroches-wrapper">
-                <div class="icon" style="transform: rotate(-45deg);top: -90px; left: -60px;">
-                  <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                </div>
-                <div class="text-center txt-wrapper">
-                  <br />
-                  <p><?php _e( 'software classes', 'support' ); ?></p>
-                  <div class="exergue">
-                    <?php _e( 'the formations', 'support' ); ?>
-                  </div>
-                  <a href="https://www.cresus.ch/support/class/dates" target="_blank" class="strong"> <?php _e( 'all the formations', 'support' ); ?></a>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
         <?php get_template_part( 'template-parts/subscription' ); ?>
         <?php  query_posts( array(
@@ -214,7 +215,7 @@ other "pages" on your WordPress site will use a different template.
                 <?php endif; ?>
                 <?php wp_reset_query(); ?>
               </div>
-              <div class="grid-x">
+              <div class="grid-x grid-padding-x">
                 <div class="small-12 cell text-center">
                   <a href="/bulletins" class="button small"><?php _e( 'show all newsletters', 'support' ); ?></a>
                 </div>

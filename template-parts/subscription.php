@@ -13,7 +13,7 @@
 </div>
 <section id="inscription">
         <div class="grid-container">
-            <div class="grid-x">
+            <div class="grid-x grid-padding-x">
                 <div class="medium-12 cell">
                     <h2 class="section-title text-center"><?php _e( 'newsletter', 'support' ); ?></h2>
                 </div>

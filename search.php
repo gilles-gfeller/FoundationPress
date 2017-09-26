@@ -16,10 +16,10 @@
         </br>
         <div class="grid-container">
             <div class="grid-x grid-padding-x align-center">
-                <div class="large-4 cell">
+                <div class="medium-4 cell">
                   <?php get_sidebar(); ?>
                 </div>
-                <div class="large-8 cell">
+                <div class="medium-8 cell">
 
                 <?php while(have_posts()) : the_post(); ?>
 
@@ -88,10 +88,10 @@
     <section id="hero">
         <div class="grid-container">
             <div class="grid-x grid-padding-x align-center">
-                <div class="large-8 small-centered cell">
+                <div class="large-8 text-center cell">
     			    <h1><?php _e( 'no result', 'support' ); ?></h1>
                 </div>
-                <div class="small-12 columns text-center">
+                <div class="small-12 text-center cell">
                     <p><?php _e( "Sorry, there is nothing. Please, try again!", 'support' ); ?></p>
                     <?php get_search_form(); ?>
                 </div>

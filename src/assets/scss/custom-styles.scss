@@ -146,9 +146,6 @@ a#logo {
     transform: translateY(-50%);
 }
 
-header #lang_sel_list ul {
-}
-
 .wpml-ls-legacy-list-horizontal {
     padding: 0px;
     border: none;
@@ -180,7 +177,6 @@ header #lang_sel_list ul {
     display: inline-block;
     color: #fff;
     margin-top: 6px;
-    padding: 0px 0px 2px 10px;
     border-left: 1px solid #fff;
     line-height: 1;
 }
@@ -573,27 +569,8 @@ table.bulletin tbody tr td input#inscription:hover {
     opacity: .5;
 }
 
-#bulletin .wrapper {
-    margin-top: 2em;
-}
-
-#bulletin .wrapper .date {
-    font-size: .8em;
-    color: #999;
-}
-
-#bulletin .wrapper:hover {
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20)
-}
-
-#bulletin .wrapper .text {
-    padding: 1em;
-    position: relative;
-}
-
-#bulletin .wrapper .text h3 {
-    color: $primary-color ;
-    font-size: 1.5em;
+#bulletin .grid-x {
+    margin: 10px;
 }
 
 #bulletin .card a.button {
@@ -601,7 +578,6 @@ table.bulletin tbody tr td input#inscription:hover {
     background: #fff;
     border: 2px solid #005187;
     display: block;
-    width: 50%;
     margin: 40px auto 0px auto;
     font-size: .75em;
     opacity: 1;
@@ -616,15 +592,6 @@ table.bulletin tbody tr td input#inscription:hover {
 #bulletin .card:hover {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20);
     z-index: 100;
-}
-
-#bulletin .wrapper:hover .text a.button {
-    color: #FFF ;
-    background: $primary-color;
-}
-
-#bulletin .wrapper:hover .text a.button:hover {
-    opacity: .5;
 }
 
 #faq a.button{
@@ -1004,11 +971,13 @@ p.note {
     }
 
     #wpml-mobile {
+        position: absolute;
         color: $white;
-        width:195px;
-        margin: auto;
+        width:202.5px;
+        left: 50%;
+        transform: translateX(-50%);
         text-align: center;
-        padding: 0.75em;
+        padding: 1em;
     }
 
     #website-mobile a {
@@ -1016,35 +985,50 @@ p.note {
         color: $white;
         left: 50%;
         transform: translateX(-50%);
-        margin-top: 1.5em;
+        margin-top: 2.5em;
+        padding: 1em;
     }
 
     #website-mobile a:hover {
         color: $medium-gray;
     }
 
+    .accroches-wrapper .txt-wrapper {
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        width:90%;
+        margin: auto;
+    }
+    #footer-top a.social i {
+        font-size: 2em;
+        margin-right: 0.5em;
+    }
 }
 
 /* Medium and up */
 @media screen and (min-width: 40em) {
-    /* ACCROCHES */
-    .accroches-wrapper .icon {
-        opacity: .5;
-    }
 
-    .accroches-wrapper .txt-wrapper {
-        padding: 0px 0px 0px 40%;
-    }
 }
 
 /* Medium only */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-
+    .accroches-wrapper .txt-wrapper {
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        width:90%;
+        margin: auto;
+    }
 }
 
 /* Large and up */
 @media screen and (min-width: 64em) {
-
+    .accroches-wrapper .txt-wrapper {
+        padding: 0px 0px 0px 40%;
+    }
 }
 
 /* Large only */
