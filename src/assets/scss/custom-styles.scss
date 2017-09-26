@@ -955,26 +955,42 @@ p.note {
         visibility: hidden;
     }
 
+    .close {
+        width: 32px;
+        height: 32px;
+    }
+
     #close-button.show {
         display: block;
         visibility: visible;
         position: absolute;
-        right: 315px;
-        top: 50px;
-        font-size: 2.5em;
-        color: $white;
+        right: 325px;   /* 315px = Offcanvas width */
+        top: 30px;
         animation-name: show-close-button;
-        animation-duration: 2s;
+        animation-duration: 0.5s;
         animation-iteration-count: 1;
         animation-direction: normal;
     }
 
+    .close:before, .close:after {
+        position: absolute;
+        content: ' ';
+        height: 33px;
+        width: 2px;
+        background-color: $white;
+    }
+    .close:before {
+        transform: rotate(45deg);
+    }
+    .close:after {
+        transform: rotate(-45deg);
+    }
+
     @keyframes show-close-button {
         from {
-            visibility: visible;
             opacity:0;
         }
-        50% {
+        90% {
             opacity:0;
         }
 

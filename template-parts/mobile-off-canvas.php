@@ -35,7 +35,7 @@
             // on ajoute le bouton pour fermer l'overlay sur l'overlay
                 $('.js-off-canvas-overlay').html(
                 '<button id="close-button" aria-label="Close menu" type="button" data-close>' +
-                    '<i class="fa fa-times" aria-hidden="true"></i>' +
+                    '<a href="#" class="close">' +
                 '</button>'
                 );
                 $('#close-button').addClass("show");

@@ -3,10 +3,17 @@
  * Put here all your custom filter who modify the behavior of a function
  */
 
+function wpdocs_custom_excerpt_length( $length ) {
+    return 25;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
 // Ajoute un lien lire la suite
 function excerpt_read_more_link($output) {
     global $post;
-    return $output . '<a class="button" href="'. get_permalink($post->ID) . '"> Lire la suite...</a>';
+    if(ICL_LANGUAGE_CODE=='fr') $read_next = "Lire la suite...";
+    else $read_next = "Mehr lesen...";
+    return $output . '<a class="button small" href="'. get_permalink($post->ID) . '">$read_next</a>';
 }
 add_filter('the_excerpt', 'excerpt_read_more_link');
 
@@ -63,7 +70,3 @@ add_filter('pre_get_posts','custom_search_filter');
  * @param int $length Excerpt length.
  * @return int (Maybe) modified excerpt length.
  */
-function wpdocs_custom_excerpt_length( $length ) {
-    return 25;
-}
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );

@@ -37,14 +37,17 @@
                     <?php if (in_category('blog')){ ?>
                       <h5><?php the_field('sous-titre'); ?></h5>
                     <?php } ?>
-                    <?php the_excerpt(); ?>
+                    <?php
+                    /* Le contenu du bouton lire la suite (+ traduction) se trouve dans custom-filter.php dans les library */
+                    the_excerpt();
+                    ?>
 
                     <?php if(get_the_tag_list()) {
                       echo '<div class="tags-wrapper">';
                       echo '<h5>';
                       _e( 'tags', 'support' );
                       echo '</h5>';
-                      echo get_the_tag_list('<ul class="etiquettes"><li data-tooltip aria-haspopup="true" data-trigger-class="" data-disable-hover="false" tabindex="1" title="Afficher tous les articles qui possèdent la même étiquette">','</li><li data-tooltip aria-haspopup="true" class="" data-disable-hover="false" tabindex="1" title="Afficher tous les articles qui possèdent la même étiquette">','</li></ul>');
+                      echo get_the_tag_list('<ul class="etiquettes"><li data-tooltip data-trigger-class="" aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Afficher tous les articles qui possèdent la même étiquette">','</li><li data-tooltip aria-haspopup="true" data-trigger-class="" data-disable-hover="false" tabindex="1" title="Afficher tous les articles qui possèdent la même étiquette">','</li></ul>');
                       echo '</div>';
                       }?>
                       <br />
@@ -68,7 +71,7 @@
             </div>
         </div>
     </section>
-    
+
     <section id="search">
         <div class="grid-container">
             <div class="grid-x grid-padding-x align-center">
@@ -78,8 +81,8 @@
                 </div>
             </div>
       </div>
-    </section> 
-    
+    </section>
+
 <?php else : ?>
 
     <section id="hero">
@@ -96,7 +99,7 @@
         </div>
     </section>
 
-    
+
 <?php endif; ?>
 
 <?php get_footer(); ?>
