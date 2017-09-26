@@ -21,6 +21,8 @@
           </td>
         </tr>
       </tbody></table>
+  </form>
+  <form role="search-mobile" method="get" id="searchform-mobile" action="<?php bloginfo('home'); ?>/">
       <table class="search show-for-small-only">
         <tbody><tr>
           <td colspan="2">
@@ -30,7 +32,7 @@
         <tr style="background: none;">
           <td>
             <select id="searchselect" name="searchselect" style="margin-bottom:0px; border: none; height: 40px;">
-          		<option value="all"><?php _e( 'On the whole site', 'support' ); ?></option>
+          	  <option value="all"><?php _e( 'On the whole site', 'support' ); ?></option>
               <option value="cresus-comptabilite"><?php _e( 'manual', 'support' ); ?> <?php _e( 'Crésus Comptabilité', 'support' ); ?></option>
               <option value="cresus-salaires"><?php _e( 'manual', 'support' ); ?> <?php _e( 'Crésus Salaires', 'support' ); ?></option>
               <option value="cresus-facturation"><?php _e( 'manual', 'support' ); ?> <?php _e( 'Crésus Facturation', 'support' ); ?></option>

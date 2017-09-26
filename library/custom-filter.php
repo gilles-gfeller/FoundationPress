@@ -13,7 +13,7 @@ function excerpt_read_more_link($output) {
     global $post;
     if(ICL_LANGUAGE_CODE=='fr') $read_next = "Lire la suite...";
     else $read_next = "Mehr lesen...";
-    return $output . '<a class="button small" href="'. get_permalink($post->ID) . '">$read_next</a>';
+    return $output . '<a class="button small" href="'. get_permalink($post->ID) . '">'.$read_next.'</a>';
 }
 add_filter('the_excerpt', 'excerpt_read_more_link');
 
@@ -63,10 +63,4 @@ function custom_search_filter( $query ) {
         return $query;
     }
 }
-
 add_filter('pre_get_posts','custom_search_filter');
-/**
- * Filter the except length to 20 words.
- * @param int $length Excerpt length.
- * @return int (Maybe) modified excerpt length.
- */
