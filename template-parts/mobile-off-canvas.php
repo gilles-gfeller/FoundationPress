@@ -8,7 +8,7 @@
 
 ?>
 
-<nav class="mobile-off-canvas-menu off-canvas position-right" id="offCanvasRight" data-off-canvas data-auto-focus="false" role="navigation">
+<nav class="mobile-off-canvas-menu off-canvas position-right" id="offCanvasRight" data-off-canvas data-auto-focus="false">
   <?php
     $menu = str_replace('sub-menu', 'menu vertical nested',wp_nav_menu(array(                    // Remplace les classes sub-menu en ajoutant des classes
         		'menu' => 'main',																 // Menu créer depuis l'interface WP

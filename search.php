@@ -1,18 +1,19 @@
 <?php get_header(); ?>
-
-<?php if ( have_posts() ) : ?>
-
     <section id="hero">
         <div class="grid-container">
             <div class="grid-x grid-padding-x align-center">
-                <div class="large-8 small-centered cell">
-            			<h1><?php _e( 'search result', 'support' ); ?></h1>
+                <div class="medium-8 cell">
+        			<h1><?php _e( 'search result', 'support' ); ?></h1>
+                    <br>
+                </div>
+                <div class="medium-12 cell">
+                    <?php get_search_form(); ?>
                 </div>
             </div>
         </div>
     </section>
-
     <section id="result">
+<?php if ( have_posts() ) : ?>
         </br>
         <div class="grid-container">
             <div class="grid-x grid-padding-x align-center">
@@ -70,36 +71,15 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="search">
-        <div class="grid-container">
-            <div class="grid-x grid-padding-x align-center">
-                <div class="small-12 text-center cell">
-                      <h2><?php _e( 'new search', 'support' ); ?></h2>
-                      <?php get_search_form(); ?>
-                </div>
-            </div>
-      </div>
-    </section>
-
 <?php else : ?>
-
-    <section id="hero">
         <div class="grid-container">
             <div class="grid-x grid-padding-x align-center">
                 <div class="large-8 text-center cell">
-    			    <h1><?php _e( 'no result', 'support' ); ?></h1>
-                </div>
-                <div class="small-12 text-center cell">
-                    <p><?php _e( "Sorry, there is nothing. Please, try again!", 'support' ); ?></p>
-                    <?php get_search_form(); ?>
+                    <br>
+    			    <p><?php _e( "Sorry, there is nothing. Please, try again!", 'support' ); ?></p>
                 </div>
             </div>
         </div>
-    </section>
-
-
 <?php endif; ?>
-
+    </section>
 <?php get_footer(); ?>

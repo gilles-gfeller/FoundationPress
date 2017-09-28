@@ -25,11 +25,11 @@
             </div>
             <div class="grid-x grid-padding-x align-center">
                 <div class="medium-12 cell text-center">
-                    <form method="get" id="" action="">
+                    <form method="post" id="subscription" action="subscription.php">
                         <table class="bulletin">
                             <tr>
                                 <td class="left"><input placeholder="<?php _e( 'please, enter your email', 'support' ); ?>" type="text" value="" name="email" id="email" /></td>
-                                <td class="right"><input type="submit" id="inscription" value="<?php _e( 'subscription', 'support' ); ?>" /></td>
+                                <td class="right"><input type="submit" id="submit-inscription" value="<?php _e( 'subscription', 'support' ); ?>" /></td>
                             </tr>
                         </table>
                     </form>
