@@ -15,6 +15,10 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <?php wp_head(); /* Balises Titre + Meta à configurer dans le SEO, wp-head() genère les balises pour nous */ ?>
+        <!-- meta -->
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="" />
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="<?php bloginfo('template_directory'); ?>/dist/assets/images/favicon.png"/>
         <!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_directory'); ?>/dist/assets/images/favicon.ico"/><![endif]-->

@@ -53,6 +53,139 @@ Les variables sont à définir dans le fichier _settings.scss
     text-shadow:none;
 }
 
+/* Slider */
+/* Le style par défaut est parametrable dans slick.scss et slick-theme.scss */
+
+.slider {
+    max-width:75em;
+    margin:auto;
+}
+
+/* BOX PRICING */
+
+section.box-pricing {
+    padding: 5em 0px;
+    height: 500px;
+}
+
+section.box-pricing h2{
+    border-bottom: 1px solid #005187;
+}
+
+section.box-pricing div.box  {
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    transition-duration: .3s;
+    transition-property: all;
+    float: left;
+    margin: .5em .5em;
+    background: #fbfbfb;
+    width: 100%;
+}
+
+section.box-pricing div.box:hover {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.10);
+    border-radius: 5px;
+    transform: scale(1.02);
+    background: #fff;
+}
+
+section.box-pricing div.box header {
+    border-radius: 5px 5px 0px 0px;
+    background: #005187;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 1.3em;
+    text-align: center;
+    min-height: 40px;
+    padding: .75em;
+}
+
+section.box-pricing div.box header.evaluation {
+    background: #A6C8E2;
+    color: #005187;
+}
+
+section.box-pricing div.box div.content {
+    font-size: 1em;
+    padding: 1em;
+    text-align: center;
+    min-height: 280px;
+}
+
+section.box-pricing div.box div.content ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+section.box-pricing div.box div.content ul li {
+    list-style: none;
+    padding: .5em;
+}
+
+section.box-pricing div.box div.content span.price {
+    font-size: 2.5em;
+    font-weight: 400;
+    color: #005187;
+    display: block;
+    padding: .5em 0px;
+}
+
+section.box-pricing div.box div.content span.price span.amount {
+    margin-left: 20px;
+}
+
+section.box-pricing div.box div.content span.price span.month {
+    font-size:.4em;
+    display: block;
+}
+
+section.box-pricing div.box footer a {
+    border-radius: 0px 0px 5px 5px;
+    background: #A6C8E2;
+    color: #005187;
+    padding: .75em;
+    text-align: center;
+    font-weight: bolder;
+    display: block;
+    text-transform: uppercase;
+}
+
+section.box-pricing div.box:hover footer a {
+    color: #fff;
+}
+
+ul.features  {
+    color: #222;
+}
+
+ul.features li.title {
+    font-weight: 800;
+}
+
+#deeplink2 img {
+    width: 33.3333%;
+    float: left;
+}
+
+ul#version-tabs {
+    position: relative;
+}
+
+ul#version-tabs h3 {
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.tabs-title {
+    float: right;
+}
+
+
 /* SCROLL TOP */
 
 a.scrollup, a.scrollup:link,a.scrollup:focus, a.scrollup:visited  {
@@ -552,7 +685,7 @@ table.bulletin tbody tr td input#email {
     background: #fff;
 }
 
-table.bulletin tbody tr td input#inscription {
+table.bulletin tbody tr td input#submit-inscription {
     color: #fff;
     border: none;
     background: $primary-color;
@@ -867,6 +1000,15 @@ p.note {
     #toptools {
         display:none;
     }
+    /* Centre le logo sur mobile */
+    a#logo {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    /* On désactive l'affichage des langues */
+    #toptools {
+        display:none;
+    }
     /* On désactive l'affichage du menu horizontal sur mobile */
     ul#menu-main, ul#menu-main-de {
         display:none;
@@ -1005,6 +1147,14 @@ p.note {
         font-size: 2em;
         margin-right: 0.5em;
     }
+
+/* SLIDER */
+
+    .slider {
+        max-width:none;
+        width:100%;
+    }
+
 }
 
 /* Medium and up */
@@ -1014,6 +1164,15 @@ p.note {
 
 /* Medium only */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    /* SLIDER */
+
+    .slider {
+        max-width:none;
+        width:100%;
+    }
+
+    /* ACCROCHE */
+
     .accroches-wrapper .txt-wrapper {
         position: absolute;
         top: 50%;

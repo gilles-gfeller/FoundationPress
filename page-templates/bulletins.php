@@ -50,11 +50,18 @@ Template Name: Bulletins
                           <table>
                             <tbody style="border: none">
                               <tr>
-                                <!-- TO TRANSLATE title="<?php _e( 'previous', 'support' ); ?>" / title="<?php _e( 'next', 'support' ); ?>"-->
-                                <td style="width: 5%; font-size: 2em;" class="text-left"><?php previous_post_link( '%link', '<i class="fa fa-angle-left" data-trigger-class="" data-tooltip aria-hidden="true" aria-haspopup="true" data-disable-hover="false" tabindex="1" title="previous"></i>', TRUE ); ?></td>
-                                <td style="width: 90%" class="text-center">Bulletin N°<?php the_field('numero'); ?> - <?php the_date(); ?></td>
-                                <td style="width: 5%; font-size: 2em;" class="text-right"><?php next_post_link( '%link', '<i class="fa fa-angle-right" data-trigger-class="" data-tooltip aria-hidden="true" aria-haspopup="true" data-disable-hover="false" tabindex="1" title="next"></i>', TRUE ); ?></td>
-                              </tr>
+                                <?php if(ICL_LANGUAGE_CODE=='fr'): ?>
+                                    <!-- TO TRANSLATE title="<?php _e( 'previous', 'support' ); ?>" / title="<?php _e( 'next', 'support' ); ?>"-->
+                                    <td style="width: 5%; font-size: 2em;" class="text-left"><?php previous_post_link( '%link', '<i class="fa fa-angle-left" data-trigger-class="" data-tooltip aria-hidden="true" aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Précédent"></i>', TRUE ); ?></td>
+                                    <td style="width: 90%" class="text-center">Bulletin N°<?php the_field('numero'); ?> - <?php the_date(); ?></td>
+                                    <td style="width: 5%; font-size: 2em;" class="text-right"><?php next_post_link( '%link', '<i class="fa fa-angle-right" data-trigger-class="" data-tooltip aria-hidden="true" aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Suivant"></i>', TRUE ); ?></td>
+                                <?php else : ?>
+                                    <!-- TO TRANSLATE title="<?php _e( 'previous', 'support' ); ?>" / title="<?php _e( 'next', 'support' ); ?>"-->
+                                    <td style="width: 5%; font-size: 2em;" class="text-left"><?php previous_post_link( '%link', '<i class="fa fa-angle-left" data-trigger-class="" data-tooltip aria-hidden="true" aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Früher"></i>', TRUE ); ?></td>
+                                    <td style="width: 90%" class="text-center">Bulletin N°<?php the_field('numero'); ?> - <?php the_date(); ?></td>
+                                    <td style="width: 5%; font-size: 2em;" class="text-right"><?php next_post_link( '%link', '<i class="fa fa-angle-right" data-trigger-class="" data-tooltip aria-hidden="true" aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Nächste"></i>', TRUE ); ?></td>
+                                <?php endif; ?>
+                               </tr>
                             </tbody>
                           </table>
                         </div>
@@ -74,7 +81,7 @@ Template Name: Bulletins
         			</div>
     		    </div>
             </div>
-		</section> 
+		</section>
 		<!--
 		<section id="sous-navigation">
 		  <div class="row text-center">
@@ -133,12 +140,13 @@ Template Name: Bulletins
                 <?php wp_reset_query(); ?>
             </div>
                 <?php
-                    echo do_shortcode('[ajax_load_more button_label="Charger plus" button_loading_label="Chargement" category="Blog" posts_per_page="4" offset="5" pause="true" pause_override="false" scroll="false" transition_container="false" container_type="div" css_classes="grid-x grid-margin-x"]');
+                    if(ICL_LANGUAGE_CODE=='fr') echo do_shortcode('[ajax_load_more button_label="Charger plus" button_loading_label="Chargement" category="Blog" posts_per_page="4" offset="5" pause="true" pause_override="false" scroll="false" transition_container="false" container_type="div" css_classes="grid-x grid-margin-x"]');
+                    else echo do_shortcode('[ajax_load_more button_label="Mehr laden" button_loading_label="Laden" category="Blog" posts_per_page="4" offset="5" pause="true" pause_override="false" scroll="false" transition_container="false" container_type="div" css_classes="grid-x grid-margin-x"]');
                 ?>
 
         </div>
     </section>
-
+    
     <section id="accroches">
         <div class="grid-container">
             <div class="grid-x grid-margin-x align-center">
@@ -176,20 +184,14 @@ Template Name: Bulletins
         </div>
         <br />
     </section>
-
-<!--
-    <section id="accroche">
-      <div class="row">
-        <div class="medium-6 columns">
-          <a href=""><img src="<?php bloginfo('template_directory'); ?>/images/hotline.png" alt="hotline" width="" height="" /></a>
-        </div>
-        <div class="medium-6 columns">
-          <a href=""><img src="<?php bloginfo('template_directory'); ?>/images/formations.png" alt="formations"/></a>
+    
+    <section id="archives">
+      <div class="grid-container">
+        <div class="grid-x grid-margin-x align-center">
+          <a href="https://www.cresus.ch/support/bulletin" class="button" target="_blank" style="background: #fff none repeat scroll 0 0;border: 2px solid #005187;color: #005187;display: block;font-size: 0.75em;margin: 40px auto 0;"><?php _e( 'archives newsletter', 'support' ); ?></a>
         </div>
       </div>
-      <br /><br />
     </section>
--->
     
 <?php get_footer(); ?>
 

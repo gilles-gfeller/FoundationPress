@@ -14,6 +14,20 @@
  * @since FoundationPress 1.0.0
  */
 
+//Global variables
+global $epsitecdocumentor_config;
+$epsitecdocumentor_config = array();
+$epsitecdocumentor_config['manual_to_path'] = array(
+    1 => 'cresus-comptabilite',
+    2 => 'cresus-salaires',
+    3 => 'cresus-facturation',
+    5 => 'cresus-gestion-pe',
+    6 => 'cresus-finanzbuchhaltung',
+    7 => 'cresus-lohnbuchhaltung',
+    8 => 'cresus-faktura',
+    9 => 'cresus-small-business'
+);
+
 /** Various clean up functions */
 require_once( 'library/cleanup.php' );
 
