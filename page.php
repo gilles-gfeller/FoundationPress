@@ -56,23 +56,25 @@
                   <?php
 
                   if ( is_page( 'manuels' ) || '1687' == $post->post_parent ) {
+/*
                   echo '<h5>';
                   the_content();
                   echo '</h5>';
-        //           echo '<a href="#" data-open="modalSearch">recherche</a>';
+                  echo '<a href="#" data-open="modalSearch">recherche</a>';
                   echo '<hr />';
+*/
                   } elseif ( is_page( 'faq' ) || '1689' == $post->post_parent ) {
                   echo '<h5>';
                   the_content();
                   echo '</h5>';
                   echo '<hr />';
                   } elseif ( is_page( 'handbuch' ) || '4384' == $post->post_parent ) {
+/*
                   echo '<h5>';
                   the_content();
                   echo '</h5>';
                   echo '<hr />';
-
-
+*/
                   } else { } ?>
 
                   <?php endwhile; ?>
