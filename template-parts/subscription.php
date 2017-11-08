@@ -3,7 +3,7 @@
  * Template part for subscription
  */
 ?>
-<div class="reveal large" id="modalBulletin" data-reveal>
+<div class="reveal large" id="modalBulletin" data-reveal data-animation-in="scale-in-up fast" data-animation-out="scale-out-down fast">
         <h1><?php _e( 'privacy policy', 'support' ); ?></h1>
         <p class="lead"><?php _e( 'privacy policy_subtitle', 'support' ); ?></p>
         <p><?php _e( 'privacy policy_text', 'support' ); ?></p>
@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="grid-x grid-padding-x align-center">
-                <div class="medium-12 cell text-center">
+                <div class="medium-8 cell text-center">
                     <form method="post" id="subscription" action="subscription.php">
                         <table class="bulletin">
                             <tr>
@@ -33,7 +33,7 @@
                             </tr>
                         </table>
                     </form>
-                    <a href="#" data-open="modalBulletin" class="adveced-search"><i class="fa fa-angle-down" aria-hidden="true"></i> <?php _e( 'privacy policy', 'support' ); ?></a>
+                    <a data-open="modalBulletin" class="adveced-search"><i class="fa fa-angle-down" aria-hidden="true"></i> <?php _e( 'privacy policy', 'support' ); ?></a>
                 </div>
             </div>
         </div>

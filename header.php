@@ -14,7 +14,7 @@
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <?php wp_head(); /* Balises Titre + Meta à configurer dans le SEO, wp-head() genère les balises pour nous */ ?>
+        <?php wp_head(); /* Balises Titre + Meta ï¿½ configurer dans le SEO, wp-head() genï¿½re les balises pour nous */ ?>
         <!-- meta -->
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -30,8 +30,8 @@
         <meta name="msapplication-square310x310logo" content="<?php bloginfo('template_directory'); ?>/dist/assets/images/win-tiles/large.png"/>
         <meta name="msapplication-TileColor" content="#005187"/>
     </head>
+        
 	<body <?php body_class(); ?>>
-<<<<<<< HEAD
     <?php do_action( 'foundationpress_after_body' ); ?>
     <?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
     <?php do_action( 'foundationpress_layout_start' ); ?>
@@ -57,39 +57,3 @@
 	</header>
 	<section class="container">
 	<?php do_action( 'foundationpress_after_header' );
-=======
-
-	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
-		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
-	<?php endif; ?>
-
-
-	<header class="site-header" role="banner">
-		<div class="site-title-bar title-bar" <?php foundationpress_title_bar_responsive_toggle() ?>>
-			<div class="title-bar-left">
-				<button class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
-				<span class="site-mobile-title title-bar-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-				</span>
-			</div>
-		</div>
-
-		<nav class="site-navigation top-bar" role="navigation">
-			<div class="top-bar-left">
-				<div class="site-desktop-title top-bar-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-				</div>
-			</div>
-			<div class="top-bar-right">
-				<?php foundationpress_top_bar_r(); ?>
-
-				<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
-					<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
-				<?php endif; ?>
-			</div>
-		</nav>
-		
-	</header>
-
-	<div class="container">
->>>>>>> upstream/master

@@ -68,16 +68,11 @@
 ?>
 <section id="bulletin">
         <div class="grid-container">
-                <div class="grid-x align-center">
-                    <div class="large-12 cell">
-                        <h2 class="section-title text-center"><?php _e( 'newsletter', 'support' ); ?></h2>
-                    </div>
-                </div>
                 <div class="grid-x grid-margin-x">
                     <?php if(have_posts()) : ?>
                     <?php while(have_posts()) : the_post(); ?>
                         <div class="card cell large-3 medium-6 small-12">
-                            <div class="card-image">
+                            <div class="card-image hide-for-small-only">
                                 <?php
                                 if ( has_post_thumbnail() ) {
                                         the_post_thumbnail();
@@ -93,7 +88,7 @@
                                 <?php the_field("sous-titre"); ?>
                             </div>
                             <div class="card-divider text-center">
-                                <a href="<?php the_permalink(); ?>" class="button bouton-bottom"><?php _e( 'read more...', 'support' ); ?></a>
+                                <a href="<?php the_permalink(); ?>" class="button more small"><?php _e( 'read more...', 'support' ); ?></a>
                             </div>
                         </div>
                     <?php endwhile; ?>
@@ -101,7 +96,7 @@
                     <?php wp_reset_query(); ?>
                 </div>
                 <?php
-                    if(ICL_LANGUAGE_CODE=='fr') echo do_shortcode('[ajax_load_more button_label="Charger plus" button_loading_label="Chargement" category="Blog" posts_per_page="4" offset="5" pause="true" pause_override="false" scroll="false" transition_container="false" container_type="div" css_classes="grid-x grid-margin-x"]');
+                    if(ICL_LANGUAGE_CODE=='fr') echo do_shortcode('[ajax_load_more button_label="CHARGER PLUS" button_loading_label="Chargement" category="Blog" posts_per_page="4" offset="5" pause="true" pause_override="false" scroll="false" transition_container="false" container_type="div" css_classes="grid-x grid-margin-x"]');
                     else echo do_shortcode('[ajax_load_more button_label="Mehr laden" button_loading_label="Laden" category="Blog" posts_per_page="4" offset="5" pause="true" pause_override="false" scroll="false" transition_container="false" container_type="div" css_classes="grid-x grid-margin-x"]');
                 ?>
         </div>

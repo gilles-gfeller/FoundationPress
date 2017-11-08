@@ -30,7 +30,7 @@ other "pages" on your WordPress site will use a different template.
                     breakpoint: 1024,
                     settings: { slidesToShow: 3, slidesToScroll: 1, initialSlide: 1, infinite: true, speed: 300, dots: true, arrows: false, centerMode: true }
                 },{
-                    // Under 740px, Small only
+                    // Under 800px, Small only
                     breakpoint: 800,
                     settings: { slidesToShow: 2, slidesToScroll: 1, initialSlide: 1, infinite: true, speed: 300, dots: true, arrows: false, centerMode: true }
                 }, {

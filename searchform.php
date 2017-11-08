@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="search-wrapper">
   <form role="search" method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
       <table class="search hide-for-small-only">
@@ -7,7 +6,7 @@
             <input type="text" placeholder="<?php _e( 'search by keywords', 'support' ); ?>" value="<?php echo $_GET['s']; ?>" name="s" id="s">
           </td>
           <td>
-            <select id="searchselect" name="searchselect" style="margin-bottom:0px; border: none; height: 40px;">
+            <select id="searchselect" name="searchselect">
           	  <option value="all"><?php _e( 'On the whole site', 'support' ); ?></option>
               <option value="cresus-comptabilite" <?php if($_GET['searchselect']=="cresus-comptabilite") echo "selected"; ?>><?php _e( 'manual', 'support' ); ?> <?php _e( 'Crésus Comptabilité', 'support' ); ?></option>
               <option value="cresus-salaires" <?php if($_GET['searchselect']=="cresus-salaires") echo "selected"; ?>><?php _e( 'manual', 'support' ); ?> <?php _e( 'Crésus Salaires', 'support' ); ?></option>
@@ -49,26 +48,3 @@
       </tbody></table>
   </form>
 </div>
-
-
-
-
-=======
-<?php
-/**
- * The template for displaying search form
- *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
- */
- ?>
-
-<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-	<div class="input-group">
-		<input type="text" class="input-group-field" value="" name="s" id="s" placeholder="<?php esc_attr_e( 'Search', 'foundationpress' ); ?>">
-		<div class="input-group-button">
-			<input type="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'foundationpress' ); ?>" class="button">
-		</div>
-	</div>
-</form>
->>>>>>> upstream/master

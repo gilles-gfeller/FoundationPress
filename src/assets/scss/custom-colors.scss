@@ -1,0 +1,279 @@
+/*
+Theme Name: Crésus Support 10-17
+Theme URI: https://support.cresus.ch
+Description: Site dédier au support des logiciels de la Ligne Crésus
+Version: 0.1
+Author: GFELLER Gilles
+
+
+Les variables sont à définir dans le fichier _settings.scss
+
+*/
+
+/*COULEURS*/
+
+$bleu1:#cce8ff;
+$bleu2:#77aad4;
+$bleu3:#226ca8;
+$bleu4:#0d4c80;
+$bleu5:#10304b;
+
+$jaune1:#fee4bb;
+$jaune2:#fccb66;
+$jaune3:#c29e52;
+$jaune4:#846d39;
+$jaune5:#3c3118;
+
+$vert1:#cfe4c1;
+$vert2:#8cc172;
+$vert3:#6b975a;
+$vert4:#47693e;
+$vert5:#273a21;
+
+$lila1:#d5b8d6;
+$lila2:#b06ea7;
+$lila3:#895482;
+$lila4:#5f375a;
+$lila5:#2c1429;
+
+$rouge1:#ffb2b3;
+$rouge2:#ff4d55;
+$rouge3:#cc0a14;
+$rouge4:#991118;
+$rouge5:#660b10;
+
+$blanc1:#ffffff;
+$blanc2:#fdfdfd;
+$blanc3:#f0f0f0;
+
+$gris1:#eee;
+$gris2:#ddd;
+$gris3:#ccc;
+$gris4:#999;
+$gris5:#666;
+$gris6:#333;
+$gris7:#222;
+$gris8:#111;
+
+// Manuel Comptabilité
+.page-id-1697, .page-id-4386 {
+  header {
+    background:$bleu3;
+  }
+  ul#menu-main li a:hover {
+    color: $bleu5;
+    background: $bleu1;
+  }    
+  ul#menu-main li:hover ul {
+    background: $bleu4;
+    color: $blanc1;
+  }
+  .menu .is-active > a {
+    background: $bleu4;
+    color: $blanc1;
+  }
+  section#header-manuel {
+    background:$bleu1;
+    color: $bleu5;
+  }
+  section#header-manuel a, section#header-manuel a:link, section#header-manuel a:focus, section#header-manuel a:visited {
+    color: $bleu5;
+  }
+  section#content {
+    color: $bleu5;
+  }
+  section#content a, section#content a:link, section#content a:focus, section#content a:visited  {
+    color: $bleu3;
+  }
+  ol.doc-list-front a, ol.doc-list-front a:link, ol.doc-list-front a:focus, ol.doc-list-front a:visited {
+    color: $bleu3;
+  }
+  ol.doc-list-front a:hover {
+    color: $bleu3;
+    background: $bleu1;
+  }
+  section#content .documentor-section h3 span, section#content .documentor-section h4 span, section#content .documentor-section h5 span {
+    color: $bleu3;
+  }  
+  section#content .documentor-section h3 {
+    border-bottom: 1px solid $bleu4;
+  }
+  form#searchform-manuals:before, form#searchform-manuals .search-field:focus {
+    color: $bleu5;
+  }
+}
+
+// Manuel Salaires
+.page-id-1699, .page-id-4388 {
+  header {
+    background:$jaune3;
+  } 
+  ul#menu-main li a:hover {
+    color: $jaune5;
+    background: $jaune1;
+  }    
+  ul#menu-main li:hover ul {
+    background: $jaune4;
+    color: $blanc1;
+  }
+  .menu .is-active > a {
+    background: $jaune4;
+    color: $blanc1;
+  }
+  section#header-manuel {
+    background:$jaune1;
+    color: $jaune5;
+  }
+  section#header-manuel a, section#header-manuel a:link, section#header-manuel a:focus, section#header-manuel a:visited {
+    color: $jaune5;
+  }
+  section#content {
+    color: $jaune5;
+  }
+  section#content a, section#content a:link, section#content a:focus, section#content a:visited  {
+    color: $jaune3;
+  }
+  ol.doc-list-front a, ol.doc-list-front a:link, ol.doc-list-front a:focus, ol.doc-list-front a:visited {
+    color: $jaune3;
+  }
+  ol.doc-list-front a:hover {
+    color: $jaune3;
+    background: $jaune1;
+  }
+  section#content .documentor-section h3 span, section#content .documentor-section h4 span, section#content .documentor-section h5 span {
+    color: $jaune3;
+  }  
+  section#content .documentor-section h3 {
+    border-bottom: 1px solid $jaune4;
+  }
+  form#searchform-manuals:before, form#searchform-manuals .search-field:focus {
+    color: $jaune5;
+  }
+}
+
+// Manuel Facturation
+.page-id-1701, .page-id-4390 {
+  header {
+    background:$vert3;
+  } 
+  ul#menu-main li a:hover {
+    color: $vert5;
+    background: $vert1;
+  }    
+  ul#menu-main li:hover ul {
+    background: $vert4;
+    color: $blanc1;
+  }
+  .menu .is-active > a {
+    background: $vert4;
+    color: $blanc1;
+  }
+  section#header-manuel {
+    background:$vert1;
+    color: $vert5;
+  }
+  section#header-manuel a, section#header-manuel a:link, section#header-manuel a:focus, section#header-manuel a:visited {
+    color: $vert5;
+  }
+  section#content {
+    color: $vert5;
+  }
+  section#content a, section#content a:link, section#content a:focus, section#content a:visited  {
+    color: $vert3;
+  }
+  ol.doc-list-front a, ol.doc-list-front a:link, ol.doc-list-front a:focus, ol.doc-list-front a:visited {
+    color: $vert3;
+  }
+  ol.doc-list-front a:hover {
+    color: $vert3;
+    background: $vert1;
+  }
+  section#content .documentor-section h3 span, section#content .documentor-section h4 span, section#content .documentor-section h5 span {
+    color: $vert3;
+  }  
+  section#content .documentor-section h3 {
+    border-bottom: 1px solid $vert4;
+  }
+  form#searchform-manuals:before, form#searchform-manuals .search-field:focus {
+    color: $vert5;
+  }
+}
+
+// Manuel Gestion PE
+.page-id-1703, .page-id-4392 {
+  header {
+    background:$lila3;
+  } 
+  ul#menu-main li a:hover {
+    color: $lila5;
+    background: $lila1;
+  }    
+  ul#menu-main li:hover ul {
+    background: $lila4;
+    color: $blanc1;
+  }
+  .menu .is-active > a {
+    background: $lila4;
+    color: $blanc1;
+  }
+  section#header-manuel {
+    background:$lila1;
+    color: $lila5;
+  }
+  section#header-manuel a, section#header-manuel a:link, section#header-manuel a:focus, section#header-manuel a:visited {
+    color: $lila5;
+  }
+  section#content {
+    color: $lila5;
+  }
+  section#content a, section#content a:link, section#content a:focus, section#content a:visited {
+    color: $lila3;
+  }
+  ol.doc-list-front a, ol.doc-list-front a:link, ol.doc-list-front a:focus, ol.doc-list-front a:visited {
+    color: $lila3;
+  }
+  ol.doc-list-front a:hover {
+    color: $lila5;
+    background: $lila1;
+  }
+  section#content .documentor-section h3 span, section#content .documentor-section h4 span, section#content .documentor-section h5 span {
+    color: $lila3;
+  }  
+  section#content .documentor-section h3 {
+    border-bottom: 1px solid $lila4;
+  }
+  form#searchform-manuals:before, form#searchform-manuals .search-field:focus {
+    color: $lila5;
+  }
+}
+
+// Manuel Gestion PE
+.page-id-1689 {
+  section#header-manuel {
+    background:$gris1;
+    color: $gris5;
+  }
+  section#header-manuel a, section#header-manuel a:link, section#header-manuel a:focus, section#header-manuel a:visited {
+    color: $bleu4;
+  }
+  section#content {
+    color: $gris5;
+  }
+  section#content a, section#content a:link, section#content a:focus, section#content a:visited {
+    color: $gris5;
+  }
+  ol.doc-list-front a, ol.doc-list-front a:link, ol.doc-list-front a:focus, ol.doc-list-front a:visited {
+    color: $gris3;
+  }
+  ol.doc-list-front a:hover {
+    background:$gris1;
+    color: $gris5;
+  }
+  section#content h3 {
+    border-bottom: 1px solid $gris4;
+    color: $bleu4;
+  }
+  form#searchform-manuals:before, form#searchform-manuals .search-field:focus {
+    color: $gris5;
+  }
+}

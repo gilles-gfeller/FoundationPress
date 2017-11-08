@@ -71,8 +71,8 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #005187,
-  secondary: #002E4D,
+  primary: #0d4c80,
+  secondary: #10304b,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
@@ -223,7 +223,7 @@ $input-error-font-weight: $global-weight-bold;
 // 7. Accordion
 // ------------
 
-$accordion-background: $white;
+$accordion-background: none;
 $accordion-plusminus: true;
 $accordion-title-font-size: rem-calc(12);
 $accordion-item-color: $primary-color;

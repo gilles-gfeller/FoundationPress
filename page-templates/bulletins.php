@@ -43,7 +43,7 @@ Template Name: Bulletins
 
 		<section id="detail">
 		    <div class="grid-container">
-                <div class="grid-x align-center">
+                <div class="grid-x grid-padding-x align-center">
         			<div class="medium-8 large-6 cell">
         			  <div class="wrapper">
                         <div class="date clearfix">
@@ -107,16 +107,11 @@ Template Name: Bulletins
     
     <section id="bulletin">
         <div class="grid-container">
-            <div class="grid-x align-center">
-                <div class="large-12 cell">
-                  <h2 class="section-title text-center"><?php _e( 'newsletter', 'support' ); ?></h2>
-                </div>
-            </div>
             <div class="grid-x grid-margin-x">
                 <?php if(have_posts()) : ?>
                 <?php while(have_posts()) : the_post(); ?>
                     <div class="card cell large-3 medium-6 small-12">
-                      <div class="card-image">
+                      <div class="card-image hide-for-small-only">
                         <?php
                         if ( has_post_thumbnail() ) {
                             the_post_thumbnail();
@@ -132,7 +127,7 @@ Template Name: Bulletins
                         <?php the_field("sous-titre"); ?>
                       </div>
                       <div class="card-divider text-center">
-                        <a href="<?php the_permalink(); ?>" class="button bouton-bottom"><?php _e( 'read more...', 'support' ); ?></a>
+                        <a href="<?php the_permalink(); ?>" class="button more small"><?php _e( 'read more...', 'support' ); ?></a>
                       </div>
                     </div>
                 <?php endwhile; ?>
@@ -140,7 +135,7 @@ Template Name: Bulletins
                 <?php wp_reset_query(); ?>
             </div>
                 <?php
-                    if(ICL_LANGUAGE_CODE=='fr') echo do_shortcode('[ajax_load_more button_label="Charger plus" button_loading_label="Chargement" category="Blog" posts_per_page="4" offset="5" pause="true" pause_override="false" scroll="false" transition_container="false" container_type="div" css_classes="grid-x grid-margin-x"]');
+                    if(ICL_LANGUAGE_CODE=='fr') echo do_shortcode('[ajax_load_more button_label="CHARGER PLUS" button_loading_label="Chargement" category="Blog" posts_per_page="4" offset="5" pause="true" pause_override="false" scroll="false" transition_container="false" container_type="div" css_classes="grid-x grid-margin-x"]');
                     else echo do_shortcode('[ajax_load_more button_label="Mehr laden" button_loading_label="Laden" category="Blog" posts_per_page="4" offset="5" pause="true" pause_override="false" scroll="false" transition_container="false" container_type="div" css_classes="grid-x grid-margin-x"]');
                 ?>
 
@@ -171,13 +166,13 @@ Template Name: Bulletins
                           <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                         </div>
                         <div class="text-center txt-wrapper">
-                          <br />
                           <p><?php _e( 'software classes', 'support' ); ?></p>
                           <div class="exergue">
                             <?php _e( 'the formations', 'support' ); ?>
                           </div>
-                          <a href="https://www.cresus.ch/support/class/dates" target="_blank" class="strong"> <?php _e( 'all the formations', 'support' ); ?></a>
-                        </div>
+                          <p class="strong"><?php _e( 'online registration', 'support' ); ?></p>
+                          <a href="https://www.cresus.ch/support/class/dates" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i> <?php _e( 'all the formations', 'support' ); ?></a>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -188,7 +183,7 @@ Template Name: Bulletins
     <section id="archives">
       <div class="grid-container">
         <div class="grid-x grid-margin-x align-center">
-          <a href="https://www.cresus.ch/support/bulletin" class="button" target="_blank" style="background: #fff none repeat scroll 0 0;border: 2px solid #005187;color: #005187;display: block;font-size: 0.75em;margin: 40px auto 0;"><?php _e( 'archives newsletter', 'support' ); ?></a>
+          <a href="https://www.cresus.ch/support/bulletin" class="button more " target="_blank" style="margin-top: 40px;"><?php _e( 'archives newsletter', 'support' ); ?></a>
         </div>
       </div>
     </section>

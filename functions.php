@@ -16,7 +16,14 @@
 
 //Global variables
 global $epsitecdocumentor_config;
+
 $epsitecdocumentor_config = array();
+
+$epsitecdocumentor_config['lang_to_path'] = array(
+    'fr' => '/manuels/',
+    'de' => '/de/handbuch/'
+);
+
 $epsitecdocumentor_config['manual_to_path'] = array(
     1 => 'cresus-comptabilite',
     2 => 'cresus-salaires',
@@ -27,6 +34,31 @@ $epsitecdocumentor_config['manual_to_path'] = array(
     8 => 'cresus-faktura',
     9 => 'cresus-small-business'
 );
+
+$epsitecdocumentor_config['manual_to_label'] = array(
+    1 => 'Crésus Comptabilité',
+    2 => 'Crésus Salaires',
+    3 => 'Crésus Facturation',
+    5 => 'Crésus Gestion PE',
+    6 => 'Crésus Finanzbuchhaltung',
+    7 => 'Crésus Lohnbuchhaltung',
+    8 => 'Crésus Faktura',
+    9 => 'Crésus Small Business'
+);
+
+$epsitecdocumentor_config['manual_by_lang'] = array(
+    'fr' => array(1,2,3,5),
+    'de' => array(6,7,8,9)
+);
+
+$epsitecdocumentor_config['categ_to_path'] = array(
+    2 => '/',
+    7 => '/faq/cresus-comptabilite/',
+    8 => '/faq/cresus-salaires/',
+    9 => '/faq/cresus-facturation/',
+    10 => '/faq/cresus-gestion-pe/'
+);
+
 
 /** Various clean up functions */
 require_once( 'library/cleanup.php' );
@@ -77,3 +109,4 @@ require_once( 'library/custom-function.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
+

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php get_header(); ?>
 
     <?php if(have_posts()) : ?>
@@ -267,57 +267,31 @@
 
 
                   <div id="accroche" class="accroches-wrapper">
-                    <div class="icon" style="transform: rotate(-0deg);top: -90px; left: -50px;">
-                      <i class="fa fa-life-ring" aria-hidden="true"></i>
-                    </div>
-                    <div class="text-center txt-wrapper">
-                      <p><?php _e( 'Did not find an answer?', 'support' ); ?></p>
-                      <div class="exergue"><?php _e( 'Ask your question now', 'support' ); ?></div>
-                      <p><a href="https://www.cresus.ch/support/question" target="_blank" class="strong"><?php _e( 'Our hotline is available online 24/7', 'support' ); ?></a></p>
-                    </div>
+                    <a href="https://www.cresus.ch/support/question" target="_blank">
+                      <div class="icon" style="transform: rotate(-0deg);top: -90px; left: -50px;">
+                        <i class="fa fa-life-ring" aria-hidden="true"></i>
+                      </div>
+                      <div class="text-center txt-wrapper">
+                        <p><?php _e( 'Did not find an answer?', 'support' ); ?></p>
+                        <div class="exergue"><?php _e( 'Ask your question now', 'support' ); ?></div>
+                        <p class="strong"><?php _e( 'Our hotline is available online 24/7', 'support' ); ?></p>
+                      </div>
+                    </a>
                   </div>
                 </div>
             </div>
         </div>
     </section>
+    
     <section id="search">
-        <div class="grid-container">
-            <div class="grid-x">
-                <div class="small-12 text-center cell">
-                  <h2><?php _e( 'search', 'support' ); ?></h2>
-                  <?php get_search_form(); ?>
-                </div>
-            </div>
+      <div class="grid-container">
+        <div class="grid-x">
+          <div class="small-12 text-center cell">
+            <h2><?php _e( 'search', 'support' ); ?></h2>
+            <?php get_search_form(); ?>
+          </div>
+        </div>
       </div>
     </section> 
 
-
 <?php get_footer(); ?>
-=======
-<?php
-/**
- * The template for displaying pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other "pages" on your WordPress site will use a different template.
- *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
- */
-
- get_header(); ?>
-
- <?php get_template_part( 'template-parts/featured-image' ); ?>
-
- <div class="main-wrap">
-	 <main class="main-content">
-		 <?php while ( have_posts() ) : the_post(); ?>
-		 	<?php get_template_part( 'template-parts/content', 'page' ); ?>
-			<?php comments_template(); ?>
-		 <?php endwhile;?>
-	 </main>
- <?php get_sidebar(); ?>
- </div>
- <?php get_footer();
->>>>>>> upstream/master

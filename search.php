@@ -17,107 +17,97 @@
         </br>
         <div class="grid-container">
             <div class="grid-x grid-padding-x align-center">
-                <div class="medium-4 cell">
+                <div class="medium-3 cell">
                   <?php get_sidebar(); ?>
                 </div>
-                <div class="medium-8 cell">
+                <div class="medium-9 cell">
 
                 <?php while(have_posts()) : the_post(); ?>
 
-<<<<<<< HEAD
-                <article>
+                <article class="clearfix epsitec-search-filtered-item <?=$oEpsitecSearchPlugin->getSearchItemClass($post->ID);?>" <?=$oEpsitecSearchPlugin->getSearchItemData($post->ID);?>>
                   <?php if (in_category('blog')){ ?>
                     <div style="float: left; width:30%; margin-right: 2em;">
                       <?php if ( has_post_thumbnail() ) { the_post_thumbnail('');
               	        } else { ?>
-                        <img src="<?php bloginfo('template_directory'); ?>/images/img-default.svg" alt="<?php the_title(); ?>" />
+                        <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/img-default.svg" alt="<?php the_title(); ?>" />
                       <?php } ?>
                     </div>
-                  <?php } ?>
-                  <div class="wrapper">
-                    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+
+                  <div class="wrapper" style="float:left;width:63%">
+                    <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
                     <?php if (in_category('blog')){ ?>
                       <h5><?php the_field('sous-titre'); ?></h5>
                     <?php } ?>
+
+                    <?php if(get_the_tag_list()) {
+                      echo '<div class="tags-wrapper">';
+                      echo get_the_tag_list('<ul class="etiquettes"><li data-tooltip data-trigger-class="" aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Afficher tous les articles qui possèdent la même étiquette">','</li><li data-tooltip aria-haspopup="true" data-trigger-class="" data-disable-hover="false" tabindex="1" title="Afficher tous les articles qui possèdent la même étiquette">','</li></ul>');
+                      echo '</div>';
+                      }?>
+
                     <?php
                     /* Le contenu du bouton lire la suite (+ traduction) se trouve dans custom-filter.php dans les library */
                     the_excerpt();
                     ?>
+                    </div>
+
+                  <?php } else { ?>
+
+                  <div class="wrapper" style="float:right;width:100%">
+                    <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
+                    <?php if (in_category('blog')){ ?>
+                      <h5><?php the_field('sous-titre'); ?></h5>
+                    <?php } ?>
 
                     <?php if(get_the_tag_list()) {
                       echo '<div class="tags-wrapper">';
-                      echo '<h5>';
-                      _e( 'tags', 'support' );
-                      echo '</h5>';
                       echo get_the_tag_list('<ul class="etiquettes"><li data-tooltip data-trigger-class="" aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Afficher tous les articles qui possèdent la même étiquette">','</li><li data-tooltip aria-haspopup="true" data-trigger-class="" data-disable-hover="false" tabindex="1" title="Afficher tous les articles qui possèdent la même étiquette">','</li></ul>');
                       echo '</div>';
                       }?>
-                      <br />
-                    <?php if(get_the_category_list()) {
-                      echo '<div class="category-wrapper">';
-                      echo '<h5>';
-                      _e( 'category', 'support' );
-                      echo '</h5>';
-                      echo tooltips_category_class(get_the_category_list());
-                      echo '</div>';
-                      }?>
-                      <hr />
-                      <br />
-                  </div>
+
+                    <?php
+                    /* Le contenu du bouton lire la suite (+ traduction) se trouve dans custom-filter.php dans les library */
+                    the_excerpt();
+                    ?>
+                    </div>
+                  <?php } ?>
+
+                  <hr />
                 </article>
 
-=======
-<div class="main-wrap">
-	<main id="search-results" class="main-content">
-
-	<header>
-	    <h1 class="entry-title"><?php _e( 'Search Results for', 'foundationpress' ); ?> "<?php echo get_search_query(); ?>"</h1>
-	</header>
->>>>>>> upstream/master
 
             <?php endwhile; ?>
 
-<<<<<<< HEAD
                 </div>
             </div>
         </div>
 <?php else : ?>
         <div class="grid-container">
             <div class="grid-x grid-padding-x align-center">
-                <div class="large-8 text-center cell">
-                    <br>
-    			    <p><?php _e( "Sorry, there is nothing. Please, try again!", 'support' ); ?></p>
+                <div class="large-9 text-center cell">
+                    <div class="grid-x grid-padding-x">
+                        <div class="medium-12 cell">
+              			         <p><?php _e( "Sorry, there is nothing. Please, try again!", 'support' ); ?></p>
+                        </div>
+                        <div class="medium-12 cell">
+                          <div class="accroches-wrapper">
+                            <div class="icon" style="transform: rotate(-30deg);top: -90px; left: -60px;">
+                              <i class="fa fa-smile-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="text-center txt-wrapper">
+                              <p><?php _e( 'hotline', 'support' ); ?></p>
+                              <div class="exergue">
+                                <?php _e( 'hotline phone number', 'support' ); ?>
+                              </div>
+                              <p class="strong">9:00 – 12:00 et 14:00 – 16:30</p>
+                              <a href="https://www.epsitec.ch/support/tarifs/" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i> <?php _e( 'hotline price', 'support' ); ?></a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 <?php endif; ?>
     </section>
 <?php get_footer(); ?>
-=======
-		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-		<?php endwhile; ?>
-
-		<?php else : ?>
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-	<?php endif; ?>
-
-	<?php
-	if ( function_exists( 'foundationpress_pagination' ) ) :
-		foundationpress_pagination();
-	elseif ( is_paged() ) :
-	?>
-		<nav id="post-nav">
-			<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
-			<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
-		</nav>
-	<?php endif; ?>
-	
-	</main>
-<?php get_sidebar(); ?>
-
-</div>
-
-<?php get_footer();
->>>>>>> upstream/master

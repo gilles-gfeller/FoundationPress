@@ -8,15 +8,15 @@ Author: GFELLER Gilles
 font-family: 'Domine', serif;
 font-family: 'Lato', sans-serif;
 
-BLACK:        #222222
-WHITE:        #FDFDFD
+BLACK:        $gris5222
+WHITE:        $blanc2
 
 DARK GRAY     #333333
 MEDIUM GRAY   #
 LIGHT GRAY
 
 DARK BLUE
-MEDIUM BLUE   #005187
+MEDIUM BLUE   $bleu4
 LIGHT BLUE
 
 DARK YELLLOW
@@ -31,25 +31,82 @@ Les variables sont à définir dans le fichier _settings.scss
 
 */
 
+/*COULEURS*/
+
+$bleu1:#cce8ff;
+$bleu2:#77aad4;
+$bleu3:#226ca8;
+$bleu4:#0d4c80;
+$bleu5:#10304b;
+
+$jaune1:#fee4bb;
+$jaune2:#fccb66;
+$jaune3:#c29e52;
+$jaune4:#846d39;
+$jaune5:#3c3118;
+
+$vert1:#cfe4c1;
+$vert2:#8cc172;
+$vert3:#6b975a;
+$vert4:#47693e;
+$vert5:#273a21;
+
+$lila1:#d5b8d6;
+$lila2:#b06ea7;
+$lila3:#895482;
+$lila4:#5f375a;
+$lila5:#2c1429;
+
+$rouge1:#ffb2b3;
+$rouge2:#ff4d55;
+$rouge3:#cc0a14;
+$rouge4:#991118;
+$rouge5:#660b10;
+
+$blanc1:#ffffff;
+$blanc2:#fdfdfd;
+$blanc3:#f0f0f0;
+
+$gris1:#eee;
+$gris2:#ddd;
+$gris3:#ccc;
+$gris4:#999;
+$gris5:#666;
+$gris6:#333;
+$gris7:#222;
+$gris8:#111;
+
+
+.accordion-title::before {
+    // Font Awesome implementation:
+    content: "\f107";
+    font-family: FontAwesome;
+}
+
+.is-active .accordion-title::before {
+    content: "\f106";
+    font-family: FontAwesome;
+}
+
 * {
     box-sizing: border-box;
 }
 
 ::selection{
-    background: none repeat scroll 0 0 #222;
-    color: #fdfdfd;
+    background: none repeat scroll 0 0 $gris5;
+    color: $blanc2;
     text-shadow:none;
 }
 
 ::-moz-selection{
-    background: none repeat scroll 0 0 #222;
-    color: #fdfdfd;
+    background: none repeat scroll 0 0 $gris5;
+    color: $blanc2;
     text-shadow:none;
 }
 
 ::-webkit-selection{
-    background: none repeat scroll 0 0 #222;
-    color: #fdfdfd;
+    background: none repeat scroll 0 0 $gris5;
+    color: $blanc2;
     text-shadow:none;
 }
 
@@ -69,7 +126,7 @@ section.box-pricing {
 }
 
 section.box-pricing h2{
-    border-bottom: 1px solid #005187;
+    border-bottom: 1px solid $bleu4;
 }
 
 section.box-pricing div.box  {
@@ -88,13 +145,13 @@ section.box-pricing div.box:hover {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.10);
     border-radius: 5px;
     transform: scale(1.02);
-    background: #fff;
+    background: $blanc1;
 }
 
 section.box-pricing div.box header {
     border-radius: 5px 5px 0px 0px;
-    background: #005187;
-    color: #fff;
+    background: $bleu4;
+    color: $blanc1;
     text-transform: uppercase;
     font-weight: lighter;
     font-size: 1.3em;
@@ -105,7 +162,7 @@ section.box-pricing div.box header {
 
 section.box-pricing div.box header.evaluation {
     background: #A6C8E2;
-    color: #005187;
+    color: $bleu4;
 }
 
 section.box-pricing div.box div.content {
@@ -128,7 +185,7 @@ section.box-pricing div.box div.content ul li {
 section.box-pricing div.box div.content span.price {
     font-size: 2.5em;
     font-weight: 400;
-    color: #005187;
+    color: $bleu4;
     display: block;
     padding: .5em 0px;
 }
@@ -145,7 +202,7 @@ section.box-pricing div.box div.content span.price span.month {
 section.box-pricing div.box footer a {
     border-radius: 0px 0px 5px 5px;
     background: #A6C8E2;
-    color: #005187;
+    color: $bleu4;
     padding: .75em;
     text-align: center;
     font-weight: bolder;
@@ -154,11 +211,11 @@ section.box-pricing div.box footer a {
 }
 
 section.box-pricing div.box:hover footer a {
-    color: #fff;
+    color: $blanc1;
 }
 
 ul.features  {
-    color: #222;
+    color: $gris5;
 }
 
 ul.features li.title {
@@ -210,8 +267,8 @@ a.scrollup:hover {
 /* BODY */
 
 body {
-    background: #fdfdfd;
-    color: #222222;
+    background: $blanc2;
+    color: $gris5;
     font-family: $body-font-family;
     margin: 0px;
     padding: 0px;
@@ -222,10 +279,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2.section-title {
-    color: $primary-color;
-    border-bottom: 1px solid $primary-color;
+    color: $bleu4;
+    border-bottom: 1px solid $bleu4;
     font-size: 1.5em;
-    margin: 2em 0px;
+    margin: 0px 0px 1em 0px;
 }
 
 a {
@@ -233,10 +290,16 @@ a {
 }
 
 a.button {
-    background: $primary-color;
-    color: #fff;
+    background: $bleu4;
+    color: $blanc1;
     text-transform: uppercase;
     font-weight: 800;
+}
+
+a.button:hover {
+    background: $bleu4;
+    opacity: .5;
+    color: $blanc1;
 }
 
 a.button.centred {
@@ -246,11 +309,30 @@ a.button.centred {
     margin: 2em auto;
 }
 
+a.button.more{
+    border: 1px solid $bleu4;
+    font-weight: 400;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin: 0px auto 0px auto;
+    font-size: .75em;
+    opacity: 1;
+    background: none;
+    color: $bleu4;
+    width: auto;
+}
+
+a.button.more:hover {
+    opacity: .5;
+    background: $bleu4;
+    color: $blanc1;
+}
+
 /* HEADER */
 
 header {
     position: relative;
-    background: $primary-color;
+    background: $bleu4;
     min-height: 105px;
 }
 
@@ -266,7 +348,7 @@ a#logo {
     position: absolute;
     top: 0px;
     right: 20px;
-    color: #fff;
+    color: $blanc1;
     font-size: .8em;
 }
 
@@ -287,13 +369,13 @@ a#logo {
 
 .wpml-ls-statics-shortcode_actions a {
     background: none;
-    color: #fff;
+    color: $blanc1;
 }
 
 .wpml-ls-statics-shortcode_actions .wpml-ls-current-language > a {
     background: none;
     font-weight: bolder;
-    color: #fff;
+    color: $blanc1;
 }
 
 .wpml-ls-statics-shortcode_actions .wpml-ls-current-language:hover > a, .wpml-ls-statics-shortcode_actions .wpml-ls-current-language > a:focus  {
@@ -308,7 +390,7 @@ a#logo {
 
 #website-link {
     display: inline-block;
-    color: #fff;
+    color: $blanc1;
     margin-top: 6px;
     line-height: 1;
     padding-left: 5px;
@@ -320,11 +402,17 @@ a#logo {
 
 /* MENU */
 
+.menu-item-12870 a:link, .menu-item-12870 a:focus, .menu-item-12870 a:visited,
+.menu-item-12871 a:link, .menu-item-12871 a:focus, .menu-item-12871 a:visited {
+  cursor: default;
+}
+
 ul#menu-main {
     position: absolute;
     right: 20px;
     bottom: 0px;
     margin: 0px;
+    z-index: 999;
 }
 
 ul#menu-main li {
@@ -336,15 +424,15 @@ ul#menu-main li {
 
 ul#menu-main li a:link, ul#menu-main li a:focus, ul#menu-main li a:visited {
     display: block;
-    color: #fff;
+    color: $blanc1;
     padding: 0.75em 1em;
     transition-duration: .2s;
     transition-property: all;
 }
 
 ul#menu-main li a:hover {
-    color: #005783;
-    background: #fdfdfd;
+    color: $bleu4;
+    background: $blanc1;
 }
 
 ul#menu-main li ul {
@@ -356,8 +444,8 @@ ul#menu-main li ul {
 ul#menu-main li:hover ul {
     display: block;
     position: absolute;
-    background: $primary-color;
-    color: #fff;
+    background: $bleu4;
+    color: $blanc1;
     padding: 0px;
 }
 
@@ -369,13 +457,14 @@ ul#menu-main li ul li a:link, ul#menu-main li ul li a:focus, ul#menu-main li ul 
     display: block;
     width: 200px;
     padding: 0.75em 1em;
+    cursor: pointer;
 }
 
 /* FOOTER */
 
 #footer-top {
-    background: $primary-color;
-    color: #fdfdfd;
+    background: $bleu4;
+    color: $blanc2;
     padding: 3em 0px;
     font-size: .9em;
 }
@@ -393,7 +482,7 @@ ul#menu-main li ul li a:link, ul#menu-main li ul li a:focus, ul#menu-main li ul 
 }
 
 #footer-top a {
-    color: #fdfdfd;
+    color: $blanc2;
 }
 
 #footer-top a:hover {
@@ -431,6 +520,14 @@ ul#menu-main li ul li a:link, ul#menu-main li ul li a:focus, ul#menu-main li ul 
     padding: 1em;
 }
 
+#footer-bottom a:link, #footer-bottom a:visited, #footer-bottom a:focus {
+    color: #81A9C3;
+}
+
+#footer-bottom a:hover {
+  text-decoration: underline;
+}
+
 /*
 ---------------------------------------------------
     HOME - SUPPORT
@@ -441,23 +538,21 @@ ul#menu-main li ul li a:link, ul#menu-main li ul li a:focus, ul#menu-main li ul 
 
 #hero {
     padding: 2em 0px 2em 0px;
-    color: #fdfdfd;
     text-align: center;
-    background: url(https://support.cresus.ch/wp-content/themes/support/images/icon.svg) left top #c8e1f3;
-    background-size: 800px;
+    background: $bleu1;
+    color: $bleu4;
 }
 
 #hero h1{
-    color: #fff;
     font-size: 2.5em;
-    font-weight: normal;
+    font-weight: lighter;
     text-transform: uppercase;
-    text-shadow: 0px 0px 20px rgba(0, 81, 135, 0.5);
+//     text-shadow: 0px 0px 20px rgba(0, 81, 135, 0.5);
 }
 
 ul.sous-navigation {
     margin: 0px;
-    padding: 0px 0px 15px 0px;
+    padding: 0px;
 }
 
 ul.sous-navigation li {
@@ -465,7 +560,7 @@ ul.sous-navigation li {
     padding: 0px;
     display: inline-block;
     list-style: none;
-    border-right: 2px solid $primary-color;
+    border-right: 2px solid $bleu4;
 }
 
 ul.sous-navigation li:last-child {
@@ -474,11 +569,9 @@ ul.sous-navigation li:last-child {
 
 ul.sous-navigation li a {
     font-weight: 700;
-    color: $primary-color;
     text-transform: uppercase;
     display: block;
     padding: 0px .5em;
-
 }
 
 ul.sous-navigation li a:hover {
@@ -486,35 +579,34 @@ ul.sous-navigation li a:hover {
 }
 
 #hero p {
-    font-weight: 700;
-    font-size: 1.25em;
-    text-shadow: 0px 0px 20px rgba(0, 81, 135, 0.2);
     margin: 1em 0px 2em 0px;
 }
 
 /* #hero .search-wrapper {
-    border-bottom: 1px solid #fff;
-    border-top: 1px solid #fff;
+    border-bottom: 1px solid $blanc1;
+    border-top: 1px solid $blanc1;
     padding: .5em 0px;
     margin-bottom: 2em;
 } */
 /* SEARCH DANS POPUP */
 
 .reveal-overlay {
-    background-color: #002e4d;
+    background-color: $bleu5;
 }
 
 .reveal {
     background: none;
     border: none;
-    color: #fff;
+    color: $blanc1;
 }
 
 #hero .search-wrapper, #modalSearch .search-wrapper {
-    border-bottom: 1px solid #fff;
-    border-top: 1px solid #fff;
+/*
+    border-bottom: 1px solid $blanc1;
+    border-top: 1px solid $blanc1;
     padding: .5em 0px;
     margin-bottom: 2em;
+*/
 }
 
 #hero table.search, #modalSearch table {
@@ -522,43 +614,201 @@ ul.sous-navigation li a:hover {
 }
 
 #hero table.search tbody, #modalSearch table.search tbody{
-    background: none;
-    border: none;
+  background: none;
+  border: none;
 }
 
 #hero table.search tbody tr td input#s, #modalSearch table.search tbody tr td input#s {
     margin-bottom: 0px;
     border: none;
-    height: 40px;
+    height: 50px;
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 10px rgba(13, 76, 128, 0.20);
+}
+
+#hero select {
+    margin-bottom:0px;
+    border: none;
+    height: 50px;
+    box-shadow: 0px 0px 10px rgba(13, 76, 128, 0.20);
+    cursor: pointer;
 }
 
 #hero table.search tbody tr td input#searchsubmit, #modalSearch table.search tbody tr td input#searchsubmit {
-    color: #fff;
+    color: $blanc1;
     border: none;
-    background: #005187;
+    background: $bleu4;
     width: 100%;
-    height: 40px;
+    height: 50px;
     font-weight: bold;
     text-transform: uppercase;
     font-size: .75em;
+    box-shadow: 0px 0px 10px rgba(13, 76, 128, 0.20);
+    cursor: pointer;
 }
 
 #hero table.search tbody tr td input#searchsubmit:hover, #modalSearch table.search tbody tr td input#searchsubmit:hover {
     opacity: .5;
 }
 
+/* SEARCH RESULTS*/
+
+article.manuel-comptabilite div.wrapper {
+  border-right: 5px solid $bleu2;
+  color: $bleu5;
+  padding: 0px 20px 0px 0px;
+  transition: .2s;
+  transition-property: all;
+}
+
+article.manuel-comptabilite div.wrapper:hover {
+  border-right: 10px solid $bleu2;
+}
+
+article.manuel-comptabilite div.wrapper a {
+  color: $bleu2;
+  transition-delay: 0.2s;
+  transition-property: all;
+}
+
+article.manuel-comptabilite div.wrapper .tags-wrapper ul.etiquettes li a {
+  color: $bleu4;
+}
+
+article.manuel-salaires div.wrapper {
+  border-right: 5px solid $jaune2;
+  color: $jaune5;
+  padding: 0px 20px 0px 0px;
+  transition: .2s;
+  transition-property: all;
+}
+
+article.manuel-salaires div.wrapper:hover {
+  border-right: 10px solid $jaune2;
+}
+
+article.manuel-salaires div.wrapper a {
+  color: $jaune2;
+}
+
+article.manuel-salaires div.wrapper .tags-wrapper ul.etiquettes li a {
+  color: $jaune4;
+}
+
+article.manuel-facturation div.wrapper {
+  border-right: 5px solid $vert2;
+  color: $vert5;
+  padding: 0px 20px 0px 0px;
+  transition: .2s;
+  transition-property: all;
+}
+
+article.manuel-facturation div.wrapper:hover {
+  border-right: 10px solid $vert2;
+}
+
+article.manuel-facturation div.wrapper a {
+  color: $vert2;
+}
+
+article.manuel-facturation div.wrapper .tags-wrapper ul.etiquettes li a {
+  color: $vert4;
+}
+
+article.manuel-gestion div.wrapper {
+  border-right: 5px solid $lila2;
+  color: $lila5;
+  padding: 0px 20px 0px 0px;
+  transition: .2s;
+  transition-property: all;
+}
+
+article.manuel-gestion div.wrapper:hover {
+  border-right: 10px solid $lila2;
+}
+
+article.manuel-gestion div.wrapper a {
+  color: $lila2;
+}
+
+article.manuel-gestion div.wrapper .tags-wrapper ul.etiquettes li a {
+  color: $lila5;
+}
+
+.epsitec-search-sidebar-ul h3 {
+  font-size: 1em;
+  color: $gris4;
+  border-bottom: 1px solid $gris3;
+  text-transform: uppercase;
+}
+
+.epsitec-search-sidebar-ul {
+  padding: 0px;
+  margin: 0px 0px 40px 0px;
+}
+
+.epsitec-search-sidebar-ul li {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+.epsitec-search-sidebar-ul li a {
+  padding: .3em .5em;
+  display: block;
+  transition: .2s;
+  transition-property: all;
+  position: relative;
+  margin-bottom: 3px;
+}
+
+.epsitec-search-sidebar-ul li a:hover {
+  background: $blanc3;
+}
+
+.epsitec-search-sidebar-ul li a.epsitec-search-filter-active {
+  background: $gris1;
+}
+
+.epsitec-search-sidebar-ul li a.epsitec-search-filter-active::after {
+    content: "\f00d";
+    font-family: FontAwesome;
+    color: $gris4;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.epsitec-search-sidebar-ul li a.epsitec-search-filter-active:hover {
+  background: $blanc3;
+}
+
+#epsitec-search-sidebar-ul-manuels li.selected a {
+  background: $blanc3;
+}
+
+#epsitec-search-sidebar-ul-manuels li.selected a::after {
+  content: "\f058";
+  font-family: FontAwesome;
+  color: $gris4;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+
 /* SECTION MANUELS*/
 
 section#manuels {
-
+    padding: 2em 0px;
 }
 
 a.comptabilite {
-    color: $primary-color;
+    color: $bleu4;
 }
 
 a.comptabilite:hover {
-    background: #c8e1f3;
+    background: $bleu1;
 }
 
 a.salaires {
@@ -610,10 +860,15 @@ a.wrap-manuel h3 {
 
 /* SECTION FAQ */
 
+#faq {
+  background: $blanc3;
+  padding: 2em 0px;
+}
+
 #faq h4 {
     font-weight: 700;
     font-size: 1em;
-    color: $primary-color;
+    color: $bleu4;
 }
 
 :last-child:not(.is-active) > .accordion-title, :last-child > .accordion-content:last-child, .accordion-title, .accordion-content {
@@ -622,18 +877,16 @@ a.wrap-manuel h3 {
 
 .accordion-title {
     font-size: 1em;
-    padding: 1.25rem 2rem 1.25rem 1rem;
-    color: #222;
+    padding: 1rem .5rem;
+    color: $gris5;
 }
 
 .is-active > .accordion-title  {
     font-weight: bolder;
 }
 
-.accordion-content {
-border-bottom: 1px solid #ddd;
-border-left: 1px solid #ddd;
-border-right: 1px solid #ddd;
+li.accordion-item.is-active {
+border: 1px solid #ddd;
 }
 
 /*
@@ -649,7 +902,7 @@ border-right: 1px solid #ddd;
 #faq ul li a {
     display: block;
     padding: .5em;
-    color: #222;
+    color: $gris5;
 }
 
 #faq ul li a:hover {
@@ -658,7 +911,7 @@ border-right: 1px solid #ddd;
 
 #faq ul li a i {
     margin-right: .5em;
-    color: $primary-color;
+    color: $bleu4;
     transition-duration: .3s;
     transition-property: all;
 }
@@ -682,24 +935,29 @@ table.bulletin tbody{
 table.bulletin tbody tr td input#email {
     margin-bottom: 0px;
     border: none;
-    height: 40px;
-    background: #fff;
+    height: 50px;
+    background: $blanc1;
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 table.bulletin tbody tr td input#submit-inscription {
-    color: #fff;
+    color: $blanc1;
     border: none;
-    background: $primary-color;
+    background: $bleu4;
     width: 100%;
-    height: 40px;
+    height: 50px;
     font-weight: bold;
     text-transform: uppercase;
     font-size: .75em;
     padding: 0px;
     margin: 0px;
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
-table.bulletin tbody tr td input#inscription:hover {
+table.bulletin tbody tr td input#submit-inscription:hover {
     opacity: .5;
 }
 
@@ -707,42 +965,70 @@ table.bulletin tbody tr td input#inscription:hover {
     margin: 10px;
 }
 
+#bulletin .card h3 {
+  font-size: 1.4em;
+}
+
+#bulletin .card p.date {
+  font-size: .8em;
+  color: #999;
+  margin-bottom: .5em;
+}
+
+/*
 #bulletin .card a.button {
-    color: #005187;
-    background: #fff;
-    border: 2px solid #005187;
+    color: $bleu4;
+    background: $blanc1;
+    border: 2px solid $bleu4;
     display: block;
-    margin: 40px auto 0px auto;
+    margin: 0px auto;
     font-size: .75em;
     opacity: 1;
 }
 
 #bulletin .card a.button:hover {
-    color: #FFF ;
-    background: #005187;
+    color: $blanc1 ;
+    background: $bleu4;
     opacity: .5;
 }
+*/
 
 #bulletin .card:hover {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20);
     z-index: 100;
 }
 
+/*
 #faq a.button{
-    background: $primary-color;
+    background: $bleu4;
     width: 200px;
     margin: 0px auto 0px auto;
     font-size: .75em;
     opacity: 1;
 }
 
-#faq a.button:hover {
-    opacity: .5;
-    background: $primary-color;
+#faq a.button.more{
+    border: 2px solid $bleu4;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin: 0px auto 0px auto;
+    font-size: .75em;
+    opacity: 1;
+    background: none;
+    color: $bleu4;
+    width: auto;
 }
 
+#faq a.button:hover {
+    opacity: .5;
+    background: $bleu4;
+    color: $blanc1;
+}
+*/
+
+
 #load-more{
-    background: $primary-color;
+    background: $bleu4;
     width:200px;
     margin: 0px auto 0px auto;
     display:block;
@@ -762,12 +1048,16 @@ table.bulletin tbody tr td input#inscription:hover {
 ---------------------------------------------------
 */
 
+section#accroches {
+    padding: 2em 0px 1em 0px;
+}
+
 .accroches-wrapper {
-    background: #a4cdea;
-    color: #fff;
+    background: $bleu2;
+    color: $blanc1;
     position: relative;
     padding: 2em;
-    margin: 4em 0px 0px 0px;
+    margin-bottom: 1em;
     overflow: hidden;
     height: 230px;
 }
@@ -783,8 +1073,8 @@ table.bulletin tbody tr td input#inscription:hover {
 }
 
 .accroches-wrapper .txt-wrapper .exergue {
-    border-bottom: 1px solid #fff;
-    border-top: 1px solid #fff;
+    border-bottom: 1px solid $blanc1;
+    border-top: 1px solid $blanc1;
     font-size: 2em;
     margin-bottom: .5em;
     text-transform: uppercase;
@@ -795,7 +1085,7 @@ table.bulletin tbody tr td input#inscription:hover {
 }
 
 .accroches-wrapper .txt-wrapper a {
-    color: #fff;
+    color: $blanc1;
 }
 
 .accroches-wrapper .txt-wrapper a:hover {
@@ -808,15 +1098,28 @@ table.bulletin tbody tr td input#inscription:hover {
 }
 
 .tags-wrapper ul.etiquettes li, .category-wrapper ul.post-categories li {
-    margin: 0px 1em 10px 0px;
-    padding: .25em .75em;
+    margin: 0px .5em 5px 0px;
+    padding: 0px .5em 2px .5em;
     display: inline-block;
     list-style: none;
-    background: #f0f0f0;
+    background: $blanc3;
+}
+
+.tags-wrapper ul.etiquettes li:hover, .category-wrapper ul.post-categories li:hover {
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
 }
 
 .tags-wrapper ul.etiquettes li a, .category-wrapper ul.post-categories li a{
     font-size: .75em;
+}
+
+.accroches-wrapper a:link, .accroches-wrapper a:visited, .accroches-wrapper a:focus {
+  color: $blanc1;
+}
+
+.accroches-wrapper a:hover {
+  color: $blanc1;
+  opacity: .5;
 }
 
 /*
@@ -826,7 +1129,7 @@ table.bulletin tbody tr td input#inscription:hover {
 */
 
 #search {
-    background: #f0f0f0;
+    background: $blanc3;
     padding: 2em 0px;
     margin: 4em 0px;
 }
@@ -835,18 +1138,30 @@ table.bulletin tbody tr td input#inscription:hover {
     background: none;
 }
 
+#search table.search tbody tr td select, .search-wrapper table.search tbody tr td select {
+    margin-bottom:0px;
+    border: none;
+    height: 50px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
 #search table.search tbody tr td input#s {
     margin-bottom: 0px;
     border: none;
-    height: 40px;
+    height: 50px;
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 #search table.search tbody tr td input#searchsubmit {
-    color: #fff;
+    color: $blanc1;
     border: none;
-    background: $primary-color;
+    background: $bleu4;
     width: 100%;
-    height: 40px;
+    height: 50px;
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     font-weight: bold;
     text-transform: uppercase;
     font-size: .75em;
@@ -855,6 +1170,68 @@ table.bulletin tbody tr td input#inscription:hover {
 #search table.search tbody tr td input#searchsubmit:hover {
     opacity: .5;
 }
+
+/*
+---------------------------------------------------
+    SEARCH ANIMATION DANS HEADER MANUELS
+---------------------------------------------------
+*/
+
+form#searchform-manuals {
+  background: none;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  background: #fff;
+  margin-right: 10px
+}
+
+form#searchform-manuals:before {
+  content: '\f002';    /* Case vide de FontAwesome */
+  font-family: FontAwesome;
+  display: block;
+  color: red;
+  position: absolute;
+  top: 1px;
+  left: 6px;
+  font-size: .9em;
+  }
+
+form#searchform-manuals .search-field {
+	border: none;
+	cursor: pointer;
+  font-size: .9em;
+  line-height: .9em;
+  height: 25px;
+	margin: 3px;
+	padding: 10px 10px;
+	position: relative;
+	-webkit-transition: width 400ms ease, background 200ms ease;
+	transition:         width 400ms ease, background 200ms ease;
+	width: 0;
+  border-radius: 20px;
+  background: none;
+  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+}
+
+form#searchform-manuals:hover {
+}
+
+form#searchform-manuals .search-field:focus {
+	cursor: text;
+	outline: 0;
+	width: 300px;
+	padding: 0px 0px 0px 20px;
+}
+
+form#searchform-manuals .search-submit {
+  display: none;
+}
+
+form#searchform-manuals input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
 
 /*
 ---------------------------------------------------
@@ -869,14 +1246,13 @@ section#ariane {
 }
 
 .breadcrumbs a {
-    color: $primary-color ;
+    color: $bleu4 ;
 }
 
 
 #inscription {
-    background: #f0f0f0;
-    padding: 0px 0px 2em 0px;
-    margin-top: 4em;
+    background: $blanc3;
+    padding: 2em 0px;
 }
 
 section#sous-navigation a {
@@ -936,8 +1312,8 @@ section#sous-navigation a:hover {
 }
 
 #sidebar ul.nav li#cresus-comptabilite a.tabs {
-    background: #c8e1f3;
-    color: $primary-color;
+    background: $bleu1;
+    color: $bleu4;
 }
 
 #sidebar ul.nav li#cresus-salaires a.tabs {
@@ -960,7 +1336,7 @@ section#sous-navigation a:hover {
 }
 
 .doc-menurelated {
-    max-height: 400px;
+//     max-height: 400px;
     overflow: auto;
 }
 
@@ -970,13 +1346,43 @@ section#sous-navigation a:hover {
 ---------------------------------------------------
 */
 
+#header-manuel {
+    padding: 1em 0px;
+}
+
+#header-manuel h1{
+    font-size: 1.5em;
+    font-weight: lighter;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+}
+
+#header-manuel a i.fa-list-ul {
+  padding: 5px;
+}
+
+#header-manuel a:hover i.fa-list-ul {
+  color: $blanc1;
+}
+
+#header-manuel a i.fa-search {
+  margin: 4px 5px 0px 0px;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+#header-manuel a:hover i.fa-search {
+  background: $blanc1;
+}
+
 span.action, p.action {
     font-style: italic;
 }
 
 span.clavier-corps, p.clavier-corps {
     border: 1px solid #666;
-    padding: 2px;
+    padding: 0px 5px;
 }
 
 span.emphase1 {
@@ -987,6 +1393,58 @@ p.note {
     background: #ddd;
     padding: 2em;
 }
+
+.volet {
+    width: 0;
+    position: absolute;
+    z-index: 888;
+    top: 0px;
+    right: 0;
+    background-color: $blanc1;
+    overflow-x: hidden;
+    transition: 0.5s;
+    border-left: 1px solid #eee;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    height: 1200px;
+}
+
+.volet-content {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    text-align: left;
+    margin-top: 65px;
+    margin-bottom: 20px;
+    padding: 1em;
+    background-color: $blanc1;
+    height: 800px;
+    overflow-y : scroll;
+}
+
+.volet a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 1em;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.volet a:hover, .volet a:focus {
+    color: #222;
+}
+
+.volet .closebtn {
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    font-size: 33px;
+}
+
+#content {
+  position: relative;
+}
+
 
 
 /* Small only */
@@ -1021,7 +1479,7 @@ p.note {
 
     ul#menu-mobile li > a {
         list-style: none;
-        background: $primary-color;
+        background: $bleu4;
         text-transform: uppercase;
         font-weight: 400;
         color: $white;
@@ -1030,7 +1488,7 @@ p.note {
 
     ul#menu-mobile li.current-menu-item > a {
         background-color: lighten($white, 100%);
-        color: $primary-color;
+        color: $bleu4;
     }
 
     ul#menu-mobile li a:link, ul#menu-mobile li a:focus, ul#menu-mobile li a:visited {
@@ -1039,7 +1497,7 @@ p.note {
     }
 
     ul#menu-mobile li a:hover {
-        color: $primary-color;
+        color: $bleu4;
         background: $white;
     }
 
@@ -1160,7 +1618,7 @@ p.note {
 
 /* Medium and up */
 @media screen and (min-width: 40em) {
-
+  
 }
 
 /* Medium only */
@@ -1186,9 +1644,16 @@ p.note {
 
 /* Large and up */
 @media screen and (min-width: 64em) {
-    .accroches-wrapper .txt-wrapper {
-        padding: 0px 0px 0px 40%;
-    }
+  .accroches-wrapper .txt-wrapper {
+      padding: 0px 0px 0px 40%;
+  }
+    
+  .accroches-wrapper .icon {
+      position: absolute;
+      font-size: 17em;
+      opacity: 1;
+  }
+
 }
 
 /* Large only */

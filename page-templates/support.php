@@ -21,7 +21,7 @@ other "pages" on your WordPress site will use a different template.
                 <div class="grid-x grid-padding-x align-center">
                 <?php if(have_posts()) : ?>
                 <?php while(have_posts()) : the_post(); ?>
-                <div class="medium-8 cell">
+                <div class="medium-10 cell">
                     <h1><?php the_title(); ?></h1>
                     <ul class="sous-navigation">
                         <li><a href="#manuels"><?php _e( 'manuals', 'support' ); ?></a></li>
@@ -34,8 +34,8 @@ other "pages" on your WordPress site will use a different template.
                 <?php endif; ?>
                 <?php wp_reset_query(); ?>
               </div>
-              <div class="grid-x grid-padding-x">
-                <div class="medium-12 cell">
+              <div class="grid-x grid-padding-x align-center">
+                <div class="medium-8 cell">
                     <?php get_search_form(); ?>
                 </div>
               </div>
@@ -43,33 +43,49 @@ other "pages" on your WordPress site will use a different template.
         </section>
         <section id="manuels">
             <div class="grid-container">
+<!--
               <div class="grid-x grid-padding-x align-center">
                 <div class="medium-12 cell">
                   <h2 class="section-title text-center"><?php _e( 'manuals', 'support' ); ?></h2>
                 </div>
               </div>
+              
+-->
+            <?php if(ICL_LANGUAGE_CODE=='fr') {
+                $lien_comptabilite = '/manuels/cresus-comptabilite/';
+                $lien_salaires = '/manuels/cresus-salaires/';
+                $lien_facturation = '/manuels/cresus-facturation/';
+                $lien_gestion_pe = '/manuels/cresus-gestion-pe/';
+              } else { 
+                $lien_comptabilite = '/de/handbuch/cresus-finanzbuchhaltung/';
+                $lien_salaires = '/de/handbuch/cresus-lohnbuchhaltung/';
+                $lien_facturation = '/de/handbuch/cresus-faktura/';
+                $lien_gestion_pe = '/de/handbuch/cresus-small-business/';
+              }
+            ?>
+
               <div class="grid-x grid-padding-x">
                 <div class="small-6 medium-6 large-3 cell">
-                  <a href="/manuels/cresus-comptabilite/" class="wrap-manuel comptabilite">
-                    <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/icon-cresus-comptabilite.svg" alt="Crésus Comptabilité">
+                  <a href="<?php echo $lien_comptabilite; ?>" class="wrap-manuel comptabilite">
+                    <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/book-cresus-comptabilite.svg" alt="Crésus Comptabilité">
                     <h3><span><?php _e( 'cresus', 'support' ); ?></span><?php _e( 'accounting', 'support' ); ?></h3>
                   </a>
                 </div>
                 <div class="small-6 medium-6 large-3 cell">
-                  <a href="/manuels/cresus-salaires/" class="wrap-manuel salaires">
-                    <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/icon-cresus-salaires.svg" alt="Crésus Salaires">
+                  <a href="<?php echo $lien_salaires; ?>" class="wrap-manuel salaires">
+                    <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/book-cresus-salaires.svg" alt="Crésus Salaires">
                     <h3><span><?php _e( 'cresus', 'support' ); ?></span><?php _e( 'salaries', 'support' ); ?></h3>
                   </a>
                 </div>
                 <div class="small-6 medium-6 large-3 cell">
-                  <a href="/manuels/cresus-facturation/" class="wrap-manuel facturation">
-                    <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/icon-cresus-facturation.svg" alt="Crésus Facturation">
+                  <a href="<?php echo $lien_facturation; ?>" class="wrap-manuel facturation">
+                    <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/book-cresus-facturation.svg" alt="Crésus Facturation">
                     <h3><span><?php _e( 'cresus', 'support' ); ?></span><?php _e( 'invoicing', 'support' ); ?></h3>
                   </a>
                 </div>
                 <div class="small-6 medium-6 large-3 cell">
-                  <a href="/manuels/cresus-gestion-pe/" class="wrap-manuel gestion-pe">
-                    <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/icon-cresus-gestion-pe.svg" alt="Crésus Gestion PE">
+                  <a href="<?php echo $lien_gestion_pe; ?>" class="wrap-manuel gestion-pe">
+                    <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/book-cresus-gestion-pe.svg" alt="Crésus Gestion PE">
                     <h3><span><?php _e( 'cresus', 'support' ); ?></span><?php _e( 'small-business', 'support' ); ?></h3>
                   </a>
                 </div>
@@ -78,21 +94,20 @@ other "pages" on your WordPress site will use a different template.
         </section>
         <section id="faq">
             <div class="grid-container">
-              <div class="grid-x grid-padding-x">
-                <div class="medium-12 cell">
-                  <h2 class="section-title text-center"><?php _e( 'faq', 'support' ); ?></h2>
-                </div>
+              <div class="grid-x grid-padding-x text-center">
+                  <div class="medium-12 cell">
+                      <h2 class="section-title"><?php _e( 'topics', 'support' ); ?></h2>
+                  </div>
               </div>
-              <div class="grid-x grid-padding-x">
-                <div class="large-6 cell">
+              <div class="grid-x grid-padding-x align-center">
+                <div class="large-8 cell">
                     <?php  query_posts( array(
                         'category_name'  => 'du-moment',
-                        'posts_per_page' => 4,
+                        'posts_per_page' => 8,
                         'orderby' => 'date',
                         'order' => 'DESC', )
                     ) ;
                     ?>
-                    <h4 class=""><!-- <i class="fa fa-clock-o" aria-hidden="true"></i> --> <?php _e( 'topics', 'support' ); ?></h4>
                     <ul class="accordion" data-accordion data-allow-all-closed="true">
                 		<?php if(have_posts()) : ?>
                 		<?php while(have_posts()) : the_post(); ?>
@@ -111,38 +126,15 @@ other "pages" on your WordPress site will use a different template.
                     <?php wp_reset_query(); ?>
                     </ul>
                 </div>
-                <div class="large-6 cell">
-                    <?php  query_posts( array(
-                        'category_name'  => 'tres-frequentes',
-                        'posts_per_page' => 4,
-                        'orderby' => 'date',
-                        'order' => 'DESC', )
-                    ) ;
-                    ?>
-                    <h4 class=""><!-- <i class="fa fa-comments-o" aria-hidden="true" ></i> --> <?php _e( 'very faq', 'support' ); ?></h4>
-                    <ul class="accordion" data-accordion data-allow-all-closed="true">
-            		<?php if(have_posts()) : ?>
-            		<?php while(have_posts()) : the_post(); ?>
-                    <li class="accordion-item" data-accordion-item>
-                      <!-- Accordion tab title -->
-                      <a href="#" class="accordion-title"><?php the_title(); ?></a>
-                      <div class="accordion-content" data-tab-content>
-                        <?php the_content(); ?>
-                      </div>
-                    </li>
-                    <?php endwhile; ?>
-                    <?php endif; ?>
-                    <?php wp_reset_query(); ?>
-                    </ul>
-                </div>
               </div>
               <div class="grid-x grid-padding-x">
                 <div class="large-12 cell text-center">
-                  <a href="/faq" class="button"><?php _e( 'View all FAQ', 'support' ); ?></a>
+                  <a href="/faq" class="button small"><?php _e( 'View all FAQ', 'support' ); ?></a>
                 </div>
               </div>
             </div>
         </section>
+        
         <section id="accroches">
             <div class="grid-container">
               <div class="grid-x grid-padding-x">
@@ -157,7 +149,7 @@ other "pages" on your WordPress site will use a different template.
                         <?php _e( 'hotline phone number', 'support' ); ?>
                       </div>
                       <p class="strong">9:00 – 12:00 et 14:00 – 16:30</p>
-                      <a href="https://www.epsitec.ch/support/tarifs/" target="_blank"><i class="fa fa-angle-down" aria-hidden="true"></i> <?php _e( 'hotline price', 'support' ); ?></a>
+                      <a href="https://www.epsitec.ch/support/tarifs/" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i> <?php _e( 'hotline price', 'support' ); ?></a>
                     </div>
                   </div>
                 </div>
@@ -171,7 +163,8 @@ other "pages" on your WordPress site will use a different template.
                       <div class="exergue">
                         <?php _e( 'the formations', 'support' ); ?>
                       </div>
-                      <a href="https://www.cresus.ch/support/class/dates" target="_blank" class="strong"> <?php _e( 'all the formations', 'support' ); ?></a>
+                      <p class="strong"><?php _e( 'online registration', 'support' ); ?></p>
+                      <a href="https://www.cresus.ch/support/class/dates" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i> <?php _e( 'all the formations', 'support' ); ?></a>
                     </div>
                   </div>
                 </div>
@@ -208,7 +201,7 @@ other "pages" on your WordPress site will use a different template.
                         <?php the_field("sous-titre"); ?>
                       </div>
                       <div class="card-divider text-center">
-                        <a href="<?php the_permalink(); ?>" class="button small bouton-bottom"><?php _e( 'read more...', 'support' ); ?></a>
+                        <a href="<?php the_permalink(); ?>" class="button small more bouton-bottom"><?php _e( 'read more...', 'support' ); ?></a>
                       </div>
                     </div>
                 <?php endwhile; ?>
