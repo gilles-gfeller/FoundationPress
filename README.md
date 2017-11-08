@@ -5,7 +5,7 @@
 [![license](https://img.shields.io/npm/l/color-name-list.svg?colorB=ff77b4)](https://github.com/olefredrik/FoundationPress/blob/master/MIT-LICENSE.txt)
 [![Buy Me a Coffee at ko-fi.com](https://img.shields.io/badge/-Buy%20me%20a%20Coffee-orange.svg?colorB=593C1F&colorA=4e798d&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAVUlEQVR4AWNQtnJTQcZ%2Blb2fsWF0dQzYNRHWzIBdE2EDGGCaSNYI47x69fY%2FMRimnmiNyGqwavyflo6MaawRTTP1%2FIiM4dFBQBPl8UggyRHWSHYiBwCwA90T1NTlAQAAAABJRU5ErkJggg%3D%3D%0D%0A&logoWidth=14)](https://ko-fi.com/olefredrik)
 
-This is a starter-theme for WordPress based on Foundation 6, the most advanced responsive (mobile-first) framework in the world. The purpose of FoundationPress, is to act as a small and handy toolbox that contains the essentials needed to build any design. FoundationPress is meant to be a starting point, not the final product.
+This is a starter-theme for WordPress based on Zurb's [Foundation for Sites 6](https://foundation.zurb.com/sites.html), the most advanced responsive (mobile-first) framework in the world. The purpose of FoundationPress, is to act as a small and handy toolbox that contains the essentials needed to build any design. FoundationPress is meant to be a starting point, not the final product.
 
 Please fork, copy, modify, delete, share or do whatever you like with this.
 
@@ -41,6 +41,9 @@ At the start of the build process a check is done to see if a `config.yml` file 
 #### Browsersync setup
 If you want to take advantage of [Browsersync](https://www.browsersync.io/) (automatic browser refresh when a file is saved), simply open your `config.yml` file after creating it in the previous step, and put your local dev-server address and port (e.g http://localhost:8888) in the `url` property under the `BROWSERSYNC` object.
 
+#### Static asset hashing / cache breaker
+If you want to make sure your users see the latest changes after re-deploying your theme, you can enable static asset hashing. In your `config.yml`, set ``REVISIONING: true;``. Hashing will work on the ``npm run build`` and ``npm run dev`` commands. It will not be applied on the start command with browsersync. This is by design.  Hashing will only change if there are actual changes in the files.
+
 ### 3. Get started
 
 ```bash
@@ -54,6 +57,14 @@ When building for production, the CSS and JS will be minified. To minify the ass
 ```bash
 $ npm run build
 ```
+
+#### To create a .zip file of your theme, run:
+
+```
+$ npm run package
+```
+
+Running this command will build and minify the theme's assets and place a .zip archive of the theme in the `packaged` directory. This excludes the developer files/directories from your theme like `/node_modules`, `/src`, etc. to keep the theme lightweight for transferring the theme to a staging or production server.
 
 ### Project structure
 
@@ -79,11 +90,17 @@ If you're new to Sass, please note that you need to have Gulp running in the bac
 
 ### JavaScript Compilation
 
-All JavaScript files in the `src/assets/js` folder, along ith Foundation and its dependencies, are bundled into one file called `app.js`. The files are imported using module dependency with [webpack](https://webpack.js.org/) as the module bundler.
+All JavaScript files, including Foundation's modules, are imported through the `src/assets/js/app.js` file. The files are imported using module dependency with [webpack](https://webpack.js.org/) as the module bundler.
 
 If you're unfamiliar with modules and module bundling, check out [this resource for node style require/exports](http://openmymind.net/2012/2/3/Node-Require-and-Exports/) and [this resource to understand ES6 modules](http://exploringjs.com/es6/ch_modules.html).
 
 Foundation modules are loaded in the `src/assets/js/app.js` file. By default all components are loaded. You can also pick and choose which modules to include. Just follow the instructions in the file.
+
+If you need to output additional JavaScript files separate from `app.js`, do the following:
+* Create new `custom.js` file in `src/assets/js/`. If you will be using jQuery, add `import $ from 'jquery';` at the top of the file.
+* In `config.yml`, add `src/assets/js/custom.js` to `PATHS.entries`.
+* Build (`npm start`)
+* You will now have a `custom.js` file outputted to the `dist/assets/js/` directory.
 
 ## Demo
 
@@ -161,6 +178,7 @@ We recommend using one of the following setups for local WordPress development:
 * [Forefront Dermatology](https://forefrontdermatology.com/)
 * [Wirthschaftsjunioren](http://www.wirtschaftsjunioren.org/)
 * [Morgridge Institute for Research](https://morgridge.org)
+* [Impeach Trump Now](https://impeachdonaldtrumpnow.org/)
 
 
 >Credit goes to all the brilliant designers and developers out there. Have **you** made a site that should be on this list? [Please let me know](https://twitter.com/olefredrik)

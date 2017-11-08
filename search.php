@@ -24,6 +24,7 @@
 
                 <?php while(have_posts()) : the_post(); ?>
 
+<<<<<<< HEAD
                 <article>
                   <?php if (in_category('blog')){ ?>
                     <div style="float: left; width:30%; margin-right: 2em;">
@@ -65,9 +66,18 @@
                   </div>
                 </article>
 
+=======
+<div class="main-wrap">
+	<main id="search-results" class="main-content">
+
+	<header>
+	    <h1 class="entry-title"><?php _e( 'Search Results for', 'foundationpress' ); ?> "<?php echo get_search_query(); ?>"</h1>
+	</header>
+>>>>>>> upstream/master
 
             <?php endwhile; ?>
 
+<<<<<<< HEAD
                 </div>
             </div>
         </div>
@@ -83,3 +93,31 @@
 <?php endif; ?>
     </section>
 <?php get_footer(); ?>
+=======
+		<?php while ( have_posts() ) : the_post(); ?>
+			<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+		<?php endwhile; ?>
+
+		<?php else : ?>
+			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+
+	<?php endif; ?>
+
+	<?php
+	if ( function_exists( 'foundationpress_pagination' ) ) :
+		foundationpress_pagination();
+	elseif ( is_paged() ) :
+	?>
+		<nav id="post-nav">
+			<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
+			<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
+		</nav>
+	<?php endif; ?>
+	
+	</main>
+<?php get_sidebar(); ?>
+
+</div>
+
+<?php get_footer();
+>>>>>>> upstream/master

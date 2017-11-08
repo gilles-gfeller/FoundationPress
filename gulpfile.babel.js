@@ -8,6 +8,7 @@ import gulp          from 'gulp';
 import rimraf        from 'rimraf';
 import yaml          from 'js-yaml';
 import fs            from 'fs';
+import dateFormat    from 'dateformat';
 import webpackStream from 'webpack-stream';
 import webpack2      from 'webpack';
 import named         from 'vinyl-named';
@@ -18,8 +19,11 @@ const $ = plugins();
 // Check for --production flag
 const PRODUCTION = !!(yargs.argv.production);
 
+// Check for --development flag unminified with sourcemaps
+const DEV = !!(yargs.argv.dev);
+
 // Load settings from settings.yml
-const { BROWSERSYNC, COMPATIBILITY, PATHS } = loadConfig();
+const { BROWSERSYNC, COMPATIBILITY, REVISIONING, PATHS } = loadConfig();
 
 // Check if file exists synchronously
 function checkFileExists(filepath) {
@@ -64,6 +68,10 @@ gulp.task('build',
 gulp.task('default',
   gulp.series('build', server, watch));
 
+// Package task
+gulp.task('package',
+  gulp.series('build', archive));
+
 // Delete the "dist" folder
 // This happens every time a build starts
 function clean(done) {
@@ -92,6 +100,9 @@ function sass() {
 
     .pipe($.if(PRODUCTION, $.cleanCss({ compatibility: 'ie9' })))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev()))
+    .pipe(gulp.dest(PATHS.dist + '/assets/css'))
+    .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev.manifest()))
     .pipe(gulp.dest(PATHS.dist + '/assets/css'))
     .pipe(browser.reload({ stream: true }));
 }
@@ -124,6 +135,9 @@ function javascript() {
       .on('error', e => { console.log(e); })
     ))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev()))
+    .pipe(gulp.dest(PATHS.dist + '/assets/js'))
+    .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev.manifest()))
     .pipe(gulp.dest(PATHS.dist + '/assets/js'));
 }
 
@@ -136,6 +150,40 @@ function images() {
     })))
     .pipe(gulp.dest(PATHS.dist + '/assets/img'));
 }
+
+// Create a .zip archive of the theme
+function archive() {
+  var time = dateFormat(new Date(), "yyyy-mm-dd_HH-MM");
+  var pkg = JSON.parse(fs.readFileSync('./package.json'));
+  var title = pkg.name + '_' + time + '.zip';
+
+  return gulp.src(PATHS.package)
+    .pipe($.zip(title))
+    .pipe(gulp.dest('packaged'));
+}
+
+// PHP Code Sniffer task
+gulp.task('phpcs', function() {
+  return gulp.src(PATHS.phpcs)
+    .pipe($.phpcs({
+      bin: 'wpcs/vendor/bin/phpcs',
+      standard: './codesniffer.ruleset.xml',
+      showSniffCode: true,
+    }))
+    .pipe($.phpcs.reporter('log'));
+});
+
+// PHP Code Beautifier task
+gulp.task('phpcbf', function () {
+  return gulp.src(PATHS.phpcs)
+  .pipe($.phpcbf({
+    bin: 'wpcs/vendor/bin/phpcbf',
+    standard: './codesniffer.ruleset.xml',
+    warningSeverity: 0
+  }))
+  .on('error', $.util.log)
+  .pipe(gulp.dest('.'));
+});
 
 // Start BrowserSync to preview the site in
 function server(done) {

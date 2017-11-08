@@ -25,6 +25,7 @@ function displayBlock($pageName) {
     }
 }
 ?>
+<<<<<<< HEAD
 
 
 
@@ -175,3 +176,8 @@ function displayBlock($pageName) {
     ?>
 </div>
 <!--// SIDEBAR -->
+=======
+<aside class="sidebar">
+	<?php dynamic_sidebar( 'sidebar-widgets' ); ?>
+</aside>
+>>>>>>> upstream/master
